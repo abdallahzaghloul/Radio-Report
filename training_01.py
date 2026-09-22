@@ -88,7 +88,7 @@ st.markdown(" <center>  <h1> RAZZAZK OIL REPORT ANALYSIS </h1> </font> </center>
 
 st.write("Hello")
 Oil_Prod=pd.read_excel(URL, sheet_name="REPORT", header = None)
-Oil_Prod.iloc[17,7];
+Oil_Prod.iloc[17,7]; 
 Oil_Prod.iloc[17,6];
 Oil_Var= int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7]);
 
