@@ -9,7 +9,7 @@ Original file is located at
 
 import pandas as pd
 import numpy as np
-
+import streamlit as st
 from datetime import date, datetime, timedelta
 
 Today = date.today()
@@ -114,4 +114,6 @@ url_02=url_02.strftime("%d-%b-%y").upper()
 url= url_01+url_02+url_03
 try:
   pd.read_excel(URL, sheet_name=Excel_Sheets[i])
+  st.write("RAZZAK REPORT is an XLSX File")
 except:
+    st.write("RAZZAK REPORT is not an XLSX File")
