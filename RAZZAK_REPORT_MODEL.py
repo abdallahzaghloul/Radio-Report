@@ -200,7 +200,7 @@ Deductions = []
 if Oil_Var_Per<= 5:
   Deductions.append(2)
 else:
-  Deductions = [10]
+  Deductions.append(10)
 
 # Tanks Evaluation 
 
