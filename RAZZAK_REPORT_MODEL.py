@@ -24,7 +24,6 @@ for i in range (1,len(Excel_Sheets)):
   Sheet_Check_List.append(A)
 Excel_Check_Report= pd.DataFrame(Excel_Sheets,columns=["Excel Sheets"])
 Excel_Check_Report["Sheet Existence"]= pd.Series(Sheet_Check_List)
-Excel_Check_Report
 
 df_REPORT=pd.read_excel(URL, sheet_name="REPORT",usecols='AU:BB',skiprows=(2))
 df_REPORT.columns=df_REPORT.columns.str.upper()
