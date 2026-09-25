@@ -172,5 +172,14 @@ Tested_Today_Per = float(Tested_Today/(Well_Data['STATUS']!='SI').sum())*100
 st.markdown(" <center>  <h1> RAZZAZK OIL REPORT ANALYSIS </h1> </font> </center> </h1> ",
             unsafe_allow_html=True)
 
+
+st.markdown(" <right>  <h1> Drilling Open/In Progress Critical Points </h1> </font> </right> </h1> ",
+            unsafe_allow_html=True)
 st.write("Hello")
+
+
+
+
+
+
 
