@@ -91,40 +91,6 @@ df_List.index = range(1, len(df_List) + 1)
 TANKS = pd.read_excel(URL, sheet_name="TANKS", header = None)
 TANKSS =pd.read_excel(url, sheet_name="TANKS", header = None)
 
-WF= pd.read_excel(URL, sheet_name="WATER FLOOD WELLS")
-
-MRZK_INJ=WF.iloc[97,8]
-WRZK_INJ=WF.iloc[98,8]
-ERZK_INJ=WF.iloc[99,8]
-NRQ_INJ=WF.iloc[100,8]
-
-
-MRZK_REQ=WF.iloc[97,9]
-WRZK_REQ=WF.iloc[98,9]
-ERZK_REQ=WF.iloc[99,9]
-NRQ_REQ=WF.iloc[100,9]
-
-# Variance = ((Actual - Forecast) / Forecast) * 100
-
-if abs((MRZK_INJ-MRZK_REQ)/MRZK_REQ) < .05:
-  print("Allah Allah Ya Wla")
-elif abs((MRZK_INJ-MRZK_REQ)/MRZK_REQ) > .05:
-  print("5od ya koskos")
-
-if abs((WRZK_INJ-WRZK_REQ)/WRZK_REQ) < .05:
-  print("Allah Allah Ya Wla")
-elif abs((WRZK_INJ-WRZK_REQ)/WRZK_REQ) > .05:
-  print("5od ya koskos")
-
-if abs((ERZK_INJ-ERZK_REQ)/ERZK_REQ) < .05:
-  print("Allah Allah Ya Wla")
-elif abs((ERZK_INJ-ERZK_REQ)/ERZK_REQ) > .05:
-  print("5od ya koskos")
-
-if abs((NRQ_INJ-NRQ_REQ)/NRQ_REQ) < .05:
-  print("Allah Allah Ya Wla")
-elif abs((NRQ_INJ-NRQ_REQ)/NRQ_REQ) > .05:
-  print("5od ya koskos")
 
 Well_Data= pd.read_excel(URL, sheet_name="WELL DATA",usecols='B:AP',skiprows=1, nrows=145)
 
