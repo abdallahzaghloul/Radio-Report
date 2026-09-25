@@ -8,7 +8,7 @@ from datetime import datetime as dt
 
 Today = date.today()
 
-im = Image.open("KPC.png")
+im = Image.open("KPC.jpg")
 image = np.array(im)
 
 st.image(image)
