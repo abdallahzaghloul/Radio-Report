@@ -89,7 +89,7 @@ Oil_Prod=pd.read_excel(URL, sheet_name="REPORT", header = None)
 Oil_Prod.iloc[17,7]
 Oil_Prod.iloc[17,6]
 Oil_Var= int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7])
-Oil_Var*100
+#Oil_Var*100
 
 if abs(Oil_Var*100) <4.99:
   print("Yallahwy El7gny Ya 3my Mansour")
@@ -144,17 +144,17 @@ Well_Data=Well_Data.drop([0,1], axis=0)
 Well_Data.index = range(1, len(Well_Data) + 1)
 
 
-(Well_Data['STATUS']=='SI').sum()
+#(Well_Data['STATUS']=='SI').sum()
 
-(Well_Data['STATUS']!='SI').sum()
-
-
-(Well_Data['STATUS']).count()
-
-(Well_Data['STATUS']=='SI').sum() + (Well_Data['STATUS']!='SI').sum() == (Well_Data['STATUS']).count()
+#(Well_Data['STATUS']!='SI').sum()
 
 
-Well_Data.columns
+#(Well_Data['STATUS']).count()
+
+#(Well_Data['STATUS']=='SI').sum() + (Well_Data['STATUS']!='SI').sum() == (Well_Data['STATUS']).count()
+
+
+#Well_Data.columns
 
 
 Well_Data['LAST WELL TEST']=pd.to_datetime(Well_Data['LAST WELL TEST'])
@@ -163,7 +163,6 @@ Well_Data['LAST WELL TEST']=Well_Data['LAST WELL TEST'].dt.strftime('%d-%m-%Y')
 Tested_Today= int(Well_Data[Well_Data['LAST WELL TEST']=='22-09-2026']['LAST WELL TEST'].count())
 
 Tested_Today_Per = float(Tested_Today/(Well_Data['STATUS']!='SI').sum())*100
-Tested_Today_Per
 
 
 
