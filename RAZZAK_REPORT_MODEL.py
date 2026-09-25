@@ -85,8 +85,8 @@ df_List.columns=df_List.columns.str.strip()
 df_List.index = range(1, len(df_List) + 1)
 
 Oil_Prod=pd.read_excel(URL, sheet_name="REPORT", header = None)
-Oil_Prod.iloc[17,7]
-Oil_Prod.iloc[17,6]
+#Oil_Prod.iloc[17,7]
+#Oil_Prod.iloc[17,6]
 Oil_Var= int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7])
 #Oil_Var*100
 
