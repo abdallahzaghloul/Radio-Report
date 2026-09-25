@@ -203,6 +203,39 @@ else:
   Deduction.append(2)
 
 
+WF= pd.read_excel(URL, sheet_name="WATER FLOOD WELLS")
+MRZK_INJ_REQ=WF.iloc[97,10]
+WRZK_INJ_REQ=WF.iloc[98,10]
+ERZK_INJ_REQ=WF.iloc[99,10]
+NRQ_INJ_REQ=WF.iloc[100,10]
+
+
+MRZK_REQ=WF.iloc[97,9]
+WRZK_REQ=WF.iloc[98,9]
+ERZK_REQ=WF.iloc[99,9]
+NRQ_REQ=WF.iloc[100,9]
+# Variance = ((Actual - Forecast) / Forecast) * 100
+
+if abs((MRZK_INJ_REQ)/MRZK_REQ) < .05:
+  Deduction.append(0)
+elif abs((MRZK_INJ_REQ)/MRZK_REQ) > .05:
+  Deduction.append(5)
+
+if abs((WRZK_INJ_REQ)/WRZK_REQ) < .05:
+  Deduction.append(0)
+elif abs((WRZK_INJ_REQ)/WRZK_REQ) > .05:
+  Deduction.append(5)
+
+if abs((ERZK_INJ_REQ)/ERZK_REQ) < .05:
+  Deduction.append(0)
+elif abs((ERZK_INJ_REQ)/ERZK_REQ) > .05:
+  Deduction.append(5)
+
+if abs((NRQ_INJ_REQ)/NRQ_REQ) < .05:
+  Deduction.append(0)
+elif abs((NRQ_INJ_REQ)/NRQ_REQ) > .05:
+  Deduction.append(5)
+
 
 
 
