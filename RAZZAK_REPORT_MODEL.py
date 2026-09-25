@@ -181,6 +181,16 @@ st.write("Hello")
 st.markdown('<p style="color:blue; font-size:24px;">This is blue and 24 pixels big!</p>',
     unsafe_allow_html=True)
 
+df = pd.DataFrame(
+    {"A": [10, 20, 30], "B": [15, 25, 35], "C": [100, 200, 300]}
+)
 
+# Apply a solid blue background with white text
+styled_df = df.style.set_properties(
+    **{"background-color": "#1E3A8A", "color": "white"}
+)
+
+# Render in Streamlit
+st.dataframe(styled_df)
 
 
