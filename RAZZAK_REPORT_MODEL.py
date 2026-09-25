@@ -190,19 +190,18 @@ import streamlit as st
 st.set_page_config(page_title="My Cool App",page_icon="🎈",)
 
 
+# Evaluation of Oil Variance
 
 Oil_Prod=pd.read_excel(URL, sheet_name="REPORT", header = None)
 Oil_Var= int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7])
-
 Oil_Var_Per= abs(int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7]))*100 
-Oil_Var_Per
 Evaluation = []
-
 if Oil_Var_Per<= 5:
   Evaluation.append(2)
 else:
   Evaluation = [10]
 
+# Tanks Evaluation 
 
 
 
