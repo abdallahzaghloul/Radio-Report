@@ -11,7 +11,7 @@ Today = date.today()
 im = Image.open("KPC.jpg")
 image = np.array(im)
 
-st.image(image,width =400)
+st.image(image,width =200)
 
 url="RAZZAK_OIL_REPORT_21_SEP_26.xlsx"
 URL="RAZZAK_OIL_REPORT_22_SEP_26.xlsx"
