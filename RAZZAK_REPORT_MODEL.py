@@ -88,17 +88,6 @@ df_List.columns=df_List.columns.str.replace("\n","")
 df_List.columns=df_List.columns.str.strip()
 df_List.index = range(1, len(df_List) + 1)
 
-Oil_Prod=pd.read_excel(URL, sheet_name="REPORT", header = None)
-#Oil_Prod.iloc[17,7]
-#Oil_Prod.iloc[17,6]
-Oil_Var= int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7])
-#Oil_Var*100
-
-if abs(Oil_Var*100) <4.99:
-  print("Yallahwy El7gny Ya 3my Mansour")
-elif abs(Oil_Var*100) <10 and abs(Oil_Var*100) >4.99:
-  print("dlssf;jsf;dj")
-
 TANKS = pd.read_excel(URL, sheet_name="TANKS", header = None)
 TANKSS =pd.read_excel(url, sheet_name="TANKS", header = None)
 
@@ -199,6 +188,21 @@ st.dataframe(styled_df)
 import streamlit as st
 
 st.set_page_config(page_title="My Cool App",page_icon="🎈",)
+
+
+
+Oil_Prod=pd.read_excel(URL, sheet_name="REPORT", header = None)
+Oil_Var= int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7])
+
+Oil_Var_Per= abs(int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7]))*100 
+Oil_Var_Per
+Evaluation = []
+
+if Oil_Var_Per<= 5:
+  Evaluation.append(2)
+else:
+  Evaluation = [10]
+
 
 
 
