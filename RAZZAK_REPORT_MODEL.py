@@ -178,7 +178,8 @@ st.markdown(" <right>  <h1> Alerts </h1> </font> </right> </h1> ",
 st.write("Hello")
 
 
-
+st.markdown('<p style="color:blue; font-size:24px;">This is blue and 24 pixels big!</p>',
+    unsafe_allow_html=True)
 
 
 
