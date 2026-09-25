@@ -194,3 +194,15 @@ styled_df = df.style.set_properties(
 st.dataframe(styled_df)
 
 
+
+
+import streamlit as st
+
+st.set_page_config(
+    page_title="My Cool App",
+    page_icon="🎈",
+)
+
+
+
+
