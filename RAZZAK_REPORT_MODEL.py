@@ -192,17 +192,53 @@ st.set_page_config(page_title="My Cool App",page_icon="🎈",)
 
 # Evaluation of Oil Variance
 
-Oil_Prod=pd.read_excel(URL, sheet_name="REPORT", header = None)
-Oil_Var= int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7])
-Oil_Var_Per= abs(int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7]))*100 
+Oil_Var_Per= abs(int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7]))*100
+Oil_Var_Per
+Deduction = []
 
-Deductions = []
 if Oil_Var_Per<= 5:
-  Deductions.append(2)
+  Deduction.append(0)
+elif 5<Oil_Var_Per<10:
+  Deduction.append(5)
 else:
-  Deductions.append(10)
+  Deduction.append(10)
+  
 
-# Tanks Evaluation 
+
+
+
+
+
+
+
+T_201_Today = pd.read_excel(URL, sheet_name="TANKS")
+T_201_YT =pd.read_excel(url, sheet_name="TANKS")
+T_201_Today.iloc[1,3]==T_201_YT.iloc[2,3]
+
+if T_201_Today.iloc[1,3]==T_201_YT.iloc[2,3]:
+  Deduction.append(0)
+  Tanks_Alert = 'The Tanks reading are Identical'
+elif abs((T_201_Today.iloc[1,3]-T_201_YT.iloc[2,3])/T_201_Today.iloc[1,3])*100<.1:
+  Deduction.append(0)
+else:
+  Deduction.append(2)
+
+
+T_202_Today = pd.read_excel(URL, sheet_name="TANKS")
+T_202_YT =pd.read_excel(url, sheet_name="TANKS")
+T_202_Today.iloc[3,3]==T_202_YT.iloc[4,3]
+
+if T_202_Today.iloc[3,3]==T_202_YT.iloc[4,3]:
+  Deduction.append(0)
+  Tanks_Alert = 'The Tanks reading are Identical'
+elif abs((T_202_Today.iloc[3,3]-T_202_YT.iloc[4,3])/T_202_Today.iloc[3,3])*100<.1:
+  Deduction.append(0)
+else:
+  Deduction.append(2)
+
+
+
+
 
 
 
