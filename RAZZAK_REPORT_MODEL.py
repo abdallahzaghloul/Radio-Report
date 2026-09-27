@@ -13,7 +13,7 @@ image = np.array(im)
 
 imm = Image.open("Apache.jpg")
 imagee = np.array(imm)
-col1, col2 = st.columns([1, 3])
+col1, col2 = st.columns([1, 2])
 with col2:
     st.image(imagee, width = 150)
 with col1:
