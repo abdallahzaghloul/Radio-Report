@@ -158,17 +158,26 @@ st.set_page_config(page_title="My Cool App",page_icon="🎈",)
 
 # Evaluation of Oil Variance
 
+Oil_Prod=pd.read_excel(URL, sheet_name="REPORT", header = None)
+Oil_Prod.iloc[17,7]
+Oil_Prod.iloc[17,6]
+Oil_Var= int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7])
+
+
+#if abs(Oil_Var*100) <4.99:
+#  print("Yallahwy El7gny Ya 3my Mansour")
+#elif abs(Oil_Var*100) <10 and abs(Oil_Var*100) >4.99:
+#  print("dlssf;jsf;dj")
+
 Oil_Var_Per= abs(int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7]))*100
 Oil_Var_Per
 Deduction = []
 
 if Oil_Var_Per<= 5:
-  Deduction.append(0)
-elif 5<Oil_Var_Per<10:
-  Deduction.append(5)
+  Deduction.append(2)
 else:
   Deduction.append(10)
-  
+
 
 
 
