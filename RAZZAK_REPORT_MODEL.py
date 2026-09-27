@@ -11,8 +11,12 @@ Today = date.today()
 im = Image.open("KPC.jpg")
 image = np.array(im)
 
-#imm = Image.open("KPC.jpg")
-#imagee = np.array(im)
+imm = Image.open("Apache.jpg")
+imagee = np.array(imm)
+col1, col2 = st.columns([1, 3])
+with col2:
+    st.image("Apache.jpg")
+  
 
 st.image(image,width =150)
 
