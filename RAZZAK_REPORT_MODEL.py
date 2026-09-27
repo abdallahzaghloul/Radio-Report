@@ -238,6 +238,42 @@ elif abs((NRQ_INJ_REQ)/NRQ_REQ) > .05:
 
 
 
+Well_Data_SRP = Well_Data[Well_Data['STATUS']=="SRP"]
+Well_Data_SRP=Well_Data_SRP.drop(columns=['AMPS', 'HZ', 'MOTOR RATING AMP','WELL TYPE', 'MOTOR LOADING PERCENTAGE','EST PRODN','UNNAMED: 19','UNNAMED: 37','DOWNTIME CAUSEINPUT WILL BE BLUE IF CAUSE REQUIRED'])
+Well_Data_SRP_Null=int(Well_Data_SRP.isnull().sum().sum())
+Well_Data['HRS ONLINE']=Well_Data['HRS ONLINE'].astype(float)
+Well_Data_24=Well_Data[(Well_Data['HRS ONLINE']<24) & (Well_Data['STATUS']!='SI') ]
+Well_Data_24_Null=int(Well_Data_24['DOWNTIME CAUSEINPUT WILL BE BLUE IF CAUSE REQUIRED'].isnull().sum())
+
+Well_Data_ESP = Well_Data[Well_Data['STATUS']=="ESP"]
+Well_Data_ESP=Well_Data_ESP.drop(columns=['UNNAMED: 19','UNNAMED: 37','DOWNTIME CAUSEINPUT WILL BE BLUE IF CAUSE REQUIRED','FLUID LEVELS', 'UNNAMED: 16', 'UNNAMED: 17', 'UNNAMED: 18',
+       'UNNAMED: 19', 'PUMP DEPTH', 'PUMP SIZE "', 'DAILY SAM DATA',
+       'UNNAMED: 23', 'UNNAMED: 24', 'UNNAMED: 25', 'SUCKER ROD PUMP DATA',
+       'UNNAMED: 27', 'UNNAMED: 28', 'UNNAMED: 29'])
+Well_Data_ESP_Null=int(Well_Data_ESP.isnull().sum().sum())
+Well_Data_Other = Well_Data[(Well_Data['STATUS']!="ESP") & (Well_Data['STATUS']!="SRP")&(Well_Data['STATUS']!="SI") ]
+Well_Data_Other=Well_Data_Other.drop(columns=['UNNAMED: 19','UNNAMED: 37','DOWNTIME CAUSEINPUT WILL BE BLUE IF CAUSE REQUIRED','FLUID LEVELS', 'UNNAMED: 16', 'UNNAMED: 17', 'UNNAMED: 18',
+       'UNNAMED: 19', 'PUMP DEPTH', 'PUMP SIZE "', 'DAILY SAM DATA',
+       'UNNAMED: 23', 'UNNAMED: 24', 'UNNAMED: 25', 'SUCKER ROD PUMP DATA',
+       'UNNAMED: 27', 'UNNAMED: 28', 'UNNAMED: 29','AMPS', 'HZ', 'MOTOR RATING AMP','WELL TYPE', 'MOTOR LOADING PERCENTAGE','EST PRODN'])
+Well_Data_Other_Null=int(Well_Data_Other.isnull().sum().sum())
+
+
+
+
+
+
+
+
+Well_Data_SRP_Per = Well_Data_SRP_Null/int(Well_Data_SRP.count().sum())
+Well_Data_Other_Per = Well_Data_Other_Null/int(Well_Data_Other.count().sum())
+Well_Data_ESP_Per = Well_Data_ESP_Null/int(Well_Data_ESP.count().sum())
+Well_Data_24_Per=Well_Data_24_Null/ int(Well_Data_24.count().sum())
+ 
+Well_Data_Null_Per = Well_Data_24_Per+Well_Data_ESP_Per+Well_Data_Other_Per+Well_Data_SRP_Per
+Well_Data_Comp = 100-Well_Data_Null_Per*100
+
+
 
 
 
