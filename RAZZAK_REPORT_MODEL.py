@@ -19,6 +19,7 @@ with col2:
   
 
 st.image(image,width =150)
+st.image(imagee,width =150)
 
 url="RAZZAK_OIL_REPORT_21_SEP_26.xlsx"
 URL="RAZZAK_OIL_REPORT_22_SEP_26.xlsx"
