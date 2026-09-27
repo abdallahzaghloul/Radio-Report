@@ -142,8 +142,7 @@ df = pd.DataFrame(
 
 # Apply a solid blue background with white text
 styled_df = df.style.set_properties(
-    **{"background-color": "#1E3A8A", "color": "white"}
-)
+    **{"background-color": "#1E3A8A", "color": "white"})
 
 # Render in Streamlit
 st.dataframe(styled_df)
@@ -186,7 +185,7 @@ else:
 
 T_201_Today = pd.read_excel(URL, sheet_name="TANKS")
 T_201_YT =pd.read_excel(url, sheet_name="TANKS")
-T_201_Today.iloc[1,3]==T_201_YT.iloc[2,3]
+#T_201_Today.iloc[1,3]==T_201_YT.iloc[2,3]
 
 if T_201_Today.iloc[1,3]==T_201_YT.iloc[2,3]:
   Deduction.append(0)
@@ -199,7 +198,7 @@ else:
 
 T_202_Today = pd.read_excel(URL, sheet_name="TANKS")
 T_202_YT =pd.read_excel(url, sheet_name="TANKS")
-T_202_Today.iloc[3,3]==T_202_YT.iloc[4,3]
+#T_202_Today.iloc[3,3]==T_202_YT.iloc[4,3]
 
 if T_202_Today.iloc[3,3]==T_202_YT.iloc[4,3]:
   Deduction.append(0)
