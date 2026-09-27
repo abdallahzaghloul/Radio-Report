@@ -15,11 +15,10 @@ imm = Image.open("Apache.jpg")
 imagee = np.array(imm)
 col1, col2 = st.columns([1, 3])
 with col2:
-    st.image("Apache.jpg")
+    st.image(imagee, width = 150)
+with col1:
+    st.image(image, width = 150)
   
-
-st.image(image,width =150)
-st.image(imagee,width =150)
 
 url="RAZZAK_OIL_REPORT_21_SEP_26.xlsx"
 URL="RAZZAK_OIL_REPORT_22_SEP_26.xlsx"
