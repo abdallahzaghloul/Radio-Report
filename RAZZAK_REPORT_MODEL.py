@@ -246,7 +246,6 @@ elif abs((NRQ_INJ_REQ)/NRQ_REQ) > .05:
   Deduction.append(5)
 
 
-
 Well_Data_SRP = Well_Data[Well_Data['STATUS']=="SRP"]
 Well_Data_SRP=Well_Data_SRP.drop(columns=['AMPS', 'HZ', 'MOTOR RATING AMP','WELL TYPE', 'MOTOR LOADING PERCENTAGE','EST PRODN','UNNAMED: 19','UNNAMED: 37','DOWNTIME CAUSEINPUT WILL BE BLUE IF CAUSE REQUIRED'])
 Well_Data_SRP_Null=int(Well_Data_SRP.isnull().sum().sum())
