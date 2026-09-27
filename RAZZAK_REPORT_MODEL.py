@@ -277,13 +277,14 @@ Well_Data_Other_Null=int(Well_Data_Other.isnull().sum().sum())
 
 
 
-Well_Data_SRP_Per = Well_Data_SRP_Null/int(Well_Data_SRP.count().sum())
-Well_Data_Other_Per = Well_Data_Other_Null/int(Well_Data_Other.count().sum())
-Well_Data_ESP_Per = Well_Data_ESP_Null/int(Well_Data_ESP.count().sum())
-Well_Data_24_Per=Well_Data_24_Null/ int(Well_Data_24.count().sum())
- 
-Well_Data_Null_Per = Well_Data_24_Per+Well_Data_ESP_Per+Well_Data_Other_Per+Well_Data_SRP_Per
+  
+Well_Data_Null = Well_Data_24_Null+Well_Data_ESP_Null+Well_Data_Other_Null+Well_Data_SRP_Null
+Well_Data_Null_Per = Well_Data_Null/int(Well_Data['WELL NAME'].count())
+
 Well_Data_Comp = 100-Well_Data_Null_Per*100
+Well_Data_Comp
+
+
 
 
 
