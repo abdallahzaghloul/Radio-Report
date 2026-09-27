@@ -285,6 +285,25 @@ Well_Data_Comp=100-(Well_Data_ESP_Null_Per+Well_Data_24_Null_Per+Well_Data_SRP_N
 
 
 
+    
+WF_Data= pd.read_excel(URL, sheet_name="WATER FLOOD WELLS",usecols='B:S',skiprows=1, nrows=74)
+WF_Data['HRS ONLINE']=WF_Data['HRS ONLINE'].astype(float)
+WF_Data=WF_Data.drop([0])
+
+WF_Data_INJ = WF_Data[WF_Data['STATUS']=='INJ']
+WF_Data_INJ = WF_Data_INJ.drop(columns=['DOWNTIME CAUSE'])
+
+WF_Data_INJ.head(2)
+WF_Data_INJ_Null=int(WF_Data_INJ.isnull().sum().sum())
+
+
+WF_Data_24 = WF_Data[(WF_Data['STATUS']!='SI')&(WF_Data['HRS ONLINE']<24)]
+WF_Data_24_Null=int(WF_Data_24['DOWNTIME CAUSE'].isnull().sum())
+
+WF_Data_24_Null_Per = WF_Data_24_Null / WF_Data_24.shape[0]
+WF_Data_INJ_Null_Per = WF_Data_INJ_Null/ (WF_Data_INJ.shape[0]*WF_Data_INJ.shape[1])
+WF_Comp = 100-(WF_Data_INJ_Null_Per+WF_Data_24_Null_Per)*100
+WF_Comp
 
 
 
