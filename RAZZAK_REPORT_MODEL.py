@@ -170,7 +170,7 @@ Oil_Var= int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7])
 #  print("dlssf;jsf;dj")
 
 Oil_Var_Per= abs(int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7]))*100
-
+Deduction = []
 if Oil_Var_Per<= 5:
   Deduction.append(2)
 else:
