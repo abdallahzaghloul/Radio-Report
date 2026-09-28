@@ -11,6 +11,9 @@ from datetime import datetime as dt
 Today = date.today()
 
 Today_Report = Today.strftime('%d_%m_%Y')
+YT_Report = dt.strptime(Today_Report, "%d_%m_%Y") - timedelta(days=1)
+YT_Report=YT_Report.strftime("%d_%m_%Y")
+
 
 im = Image.open("KPC.jpg")
 image = np.array(im)
@@ -26,20 +29,19 @@ with col1:
 Deduction = []
 
 
-url="RAZZAK_OIL_REPORT_21_SEP_26.xlsx"
-URL="RAZZAK_OIL_REPORT_22_SEP_26.xlsx"
 
-#URL = "RAZZAK_OIL_REPORT_"&Today_Report
-#url = "RAZZAK_OIL_REPORT_"&YT_Report
+
 
 if st.button("Selective RAZZAK Report Dates"):
     Start_Date = st.text_input("Enter Start Date [30-08-2025]")
     if Start_Date:
-        D01 = "RAZZAK_OIL_REPORT_"&Start_Date
+        url = "RAZZAK_OIL_REPORT_"+Start_Date
     End_Date = st.text_input("Enter End Date [31-08-2025]")
     if End_Date:
-        D02 = "RAZZAK_OIL_REPORT_"&End_Date
-    
+        URL = "RAZZAK_OIL_REPORT_"+End_Date
+elif st.button("Default RAZZAK Report Dates"):    
+    URL = "RAZZAK_OIL_REPORT_"+Today_Report
+    url = "RAZZAK_OIL_REPORT_"+YT_Report
 
 RAZZAK_File=pd.ExcelFile(URL)
 Excel_Sheets=RAZZAK_File.sheet_names
