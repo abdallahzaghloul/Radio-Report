@@ -9,6 +9,9 @@ from datetime import date, timedelta
 from datetime import datetime as dt
 
 Today = date.today()
+Today = Today.strftime('%d-%m-%Y')
+Today_Report = Today.strftime('%d_%m_%Y')
+
 
 im = Image.open("KPC.jpg")
 image = np.array(im)
@@ -22,8 +25,17 @@ with col1:
     st.image(image, width = 150)
   
 Deduction = []
+
+
 url="RAZZAK_OIL_REPORT_21_SEP_26.xlsx"
 URL="RAZZAK_OIL_REPORT_22_SEP_26.xlsx"
+
+#URL = "RAZZAK_OIL_REPORT_"&Today_Report
+#url = "RAZZAK_OIL_REPORT_"&YT_Report
+
+End_Date = st.text_input("Enter End Date")
+if End_Date:
+  D02 = "RAZZAK_OIL_REPORT_"&End_Date
 
 RAZZAK_File=pd.ExcelFile(URL)
 Excel_Sheets=RAZZAK_File.sheet_names
