@@ -109,41 +109,6 @@ Well_Data.columns=Well_Data.columns.str.strip()
 Well_Data=Well_Data.drop([0,1], axis=0)
 Well_Data.index = range(1, len(Well_Data) + 1)
 
-
-WF= pd.read_excel(URL, sheet_name="WATER FLOOD WELLS")
-MRZK_INJ_REQ=WF.iloc[97,10]
-WRZK_INJ_REQ=WF.iloc[98,10]
-ERZK_INJ_REQ=WF.iloc[99,10]
-NRQ_INJ_REQ=WF.iloc[100,10]
-
-
-MRZK_REQ=WF.iloc[97,9]
-WRZK_REQ=WF.iloc[98,9]
-ERZK_REQ=WF.iloc[99,9]
-NRQ_REQ=WF.iloc[100,9]
-# Variance = ((Actual - Forecast) / Forecast) * 100
-
-if abs((MRZK_INJ_REQ)/MRZK_REQ) < .05:
-  Deduction.append(0)
-elif abs((MRZK_INJ_REQ)/MRZK_REQ) > .05:
-  Deduction.append(5)
-
-if abs((WRZK_INJ_REQ)/WRZK_REQ) < .05:
-  Deduction.append(0)
-elif abs((WRZK_INJ_REQ)/WRZK_REQ) > .05:
-  Deduction.append(5)
-
-if abs((ERZK_INJ_REQ)/ERZK_REQ) < .05:
-  Deduction.append(0)
-elif abs((ERZK_INJ_REQ)/ERZK_REQ) > .05:
-  Deduction.append(5)
-
-if abs((NRQ_INJ_REQ)/NRQ_REQ) < .05:
-  Deduction.append(0)
-elif abs((NRQ_INJ_REQ)/NRQ_REQ) > .05:
-  Deduction.append(5)
-
-
 Well_Data_SRP = Well_Data[Well_Data['STATUS']=="SRP"]
 Well_Data_SRP=Well_Data_SRP.drop(columns=['AMPS', 'HZ', 'MOTOR RATING AMP','WELL TYPE', 'MOTOR LOADING PERCENTAGE','EST PRODN','UNNAMED: 19','UNNAMED: 37','DOWNTIME CAUSEINPUT WILL BE BLUE IF CAUSE REQUIRED'])
 Well_Data_SRP_Null=int(Well_Data_SRP.isnull().sum().sum())
@@ -321,5 +286,38 @@ elif Tested_Today_Per<25:
     st.dataframe(styled_df)
 
 
+WF= pd.read_excel(URL, sheet_name="WATER FLOOD WELLS")
+
+MRZK_INJ_REQ=WF.iloc[97,10]
+WRZK_INJ_REQ=WF.iloc[98,10]
+ERZK_INJ_REQ=WF.iloc[99,10]
+NRQ_INJ_REQ=WF.iloc[100,10]
+
+MRZK_REQ=WF.iloc[97,9]
+WRZK_REQ=WF.iloc[98,9]
+ERZK_REQ=WF.iloc[99,9]
+NRQ_REQ=WF.iloc[100,9]
+
+if abs((MRZK_INJ_REQ)/MRZK_REQ) < .05:
+    df = pd.DataFrame({"Excellent Test Coverage": ['Covered Tests Today',Tested_Today_Per]})
+    styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
+    st.dataframe(styled_df)
+elif abs((MRZK_INJ_REQ)/MRZK_REQ) > .05:
+  Deduction.append(5)
+
+if abs((WRZK_INJ_REQ)/WRZK_REQ) < .05:
+  Deduction.append(0)
+elif abs((WRZK_INJ_REQ)/WRZK_REQ) > .05:
+  Deduction.append(5)
+
+if abs((ERZK_INJ_REQ)/ERZK_REQ) < .05:
+  Deduction.append(0)
+elif abs((ERZK_INJ_REQ)/ERZK_REQ) > .05:
+  Deduction.append(5)
+
+if abs((NRQ_INJ_REQ)/NRQ_REQ) < .05:
+  Deduction.append(0)
+elif abs((NRQ_INJ_REQ)/NRQ_REQ) > .05:
+  Deduction.append(5)
 
 
