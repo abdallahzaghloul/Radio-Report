@@ -168,12 +168,10 @@ st.markdown(" <center>  <h1> RAZZAZK OIL REPORT ANALYSIS </h1> </font> </center>
             unsafe_allow_html=True)
 
 
-st.markdown(" <right>  <h1> Alerts </h1> </font> </right> </h1> ",
-            unsafe_allow_html=True)
+st.markdown(" <center>  <h1> Oil Variance Validation </h1> </font> </center> </h1> ",  unsafe_allow_html=True)
 
 
-st.markdown('<p style="color:blue; font-size:24px;">This is blue and 24 pixels big!</p>',
-    unsafe_allow_html=True)
+#st.markdown('<p style="color:blue; font-size:24px;">This is blue and 24 pixels big!</p>',    unsafe_allow_html=True)
 
 # Oil Variance Alerts
 Oil_Prod=pd.read_excel(URL, sheet_name="REPORT", header = None)
@@ -194,7 +192,8 @@ else:
     styled_df = df.style.set_properties(**{"background-color": "#B30E08", "color": "white"})
     st.dataframe(styled_df)
 
-#Completeness Alerts
+st.markdown(" <center>  <h1> Completeness Validation </h1> </font> </center> </h1> ",  unsafe_allow_html=True)
+
  
 if Well_Data_Comp >=80:
     df = pd.DataFrame({"Excellent Data Comleteness": ['Well Data Completeness',Well_Data_Comp]})
@@ -217,7 +216,7 @@ elif WF_Comp <80:
     styled_df = df.style.set_properties(**{"background-color": "#8FD9FB", "color": "white"})
     st.dataframe(styled_df)
 
-# Tanks Variance.
+st.markdown(" <center>  <h1> Tank Validation </h1> </font> </center> </h1> ",  unsafe_allow_html=True)
 
 T_201_Today = pd.read_excel(URL, sheet_name="TANKS")
 T_201_YT =pd.read_excel(url, sheet_name="TANKS")
@@ -260,6 +259,7 @@ else:
     styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
 
+st.markdown(" <center>  <h1> Test Coverage Validation </h1> </font> </center> </h1> ",  unsafe_allow_html=True)
 
 Well_Data['LAST WELL TEST']=pd.to_datetime(Well_Data['LAST WELL TEST'])
 Well_Data['LAST WELL TEST']=Well_Data['LAST WELL TEST'].dt.strftime('%d-%m-%Y')
@@ -285,6 +285,7 @@ elif Tested_Today_Per<25:
     styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
 
+st.markdown(" <center>  <h1> Water Flood Validation </h1> </font> </center> </h1> ",  unsafe_allow_html=True)
 
 WF= pd.read_excel(URL, sheet_name="WATER FLOOD WELLS")
 
