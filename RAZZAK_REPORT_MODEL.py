@@ -294,11 +294,11 @@ T_201_Var = (abs(T_201_Today_Val-T_201_YT_Val)/T_201_Today_Val)*100
 
 if T_201_Var == 0:
     df = pd.DataFrame({"Excellent Tank-201 Variance": ['Tank-201 Variance',T_201_Var]})
-    styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
+    styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
 elif T_201_Var<=.1:
     df = pd.DataFrame({"Excellent Tank-201 Variance": ['Tank-201 Variance',T_201_Var]})
-    styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
+    styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
 else:
     df = pd.DataFrame({"High Tank-201 Variance": ['Tank-201',T_201_Var]})
