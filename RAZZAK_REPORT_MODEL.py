@@ -11,7 +11,7 @@ from datetime import datetime as dt
 Today = date.today()
 Today = Today.strftime('%d-%m-%Y')
 
-Today_Report = Today.strftime('%d_%m_%Y')
+#Today_Report = Today.strftime('%d_%m_%Y')
 
 
 im = Image.open("KPC.jpg")
