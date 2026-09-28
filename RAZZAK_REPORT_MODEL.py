@@ -272,10 +272,13 @@ Oil_Var_Per= abs(int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[
 
 if Oil_Var_Per<= 5:
     df = pd.DataFrame({"High Variance Warning": [Oil_Var_Per]})
-    styled_df = df.style.set_properties(**{"background-color": "#FFFF00", "color": "white"})
+#    styled_df = df.style.set_properties(**{"background-color": "#FFFF00", "color": "white"})
+    styled_df = df.style.set_properties(**{"background-color": "#9B111E", "color": "white"})
     st.dataframe(styled_df)
 else:
-  Deduction.append(10)
+    df = pd.DataFrame({"Critical Alerts": [Oil_Var_Per]})
+    styled_df = df.style.set_properties(**{"background-color": "#9B111E", "color": "white"})
+    st.dataframe(styled_df)
 
 
 
