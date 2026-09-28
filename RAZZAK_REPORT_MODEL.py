@@ -296,7 +296,7 @@ if T_201_Var == 0:
     df = pd.DataFrame({"Excellent Tank-201 Variance": ['Tank-201 Variance',T_201_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
-elif abs(T_201_Var)/T_201_Today_Val)*100<=.1:
+elif abs((T_201_Var)/T_201_Today_Val)*100<=.1:
     df = pd.DataFrame({"Excellent Tank-201 Variance": ['Tank-201 Variance',T_201_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
