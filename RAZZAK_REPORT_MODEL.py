@@ -102,43 +102,12 @@ TANKSS =pd.read_excel(url, sheet_name="TANKS", header = None)
 
 
 Well_Data= pd.read_excel(URL, sheet_name="WELL DATA",usecols='B:AP',skiprows=1, nrows=145)
-
 Well_Data.columns=Well_Data.columns.str.upper()
 Well_Data.columns=Well_Data.columns.str.replace(".1","")
 Well_Data.columns=Well_Data.columns.str.replace("\n","")
 Well_Data.columns=Well_Data.columns.str.strip()
 Well_Data=Well_Data.drop([0,1], axis=0)
 Well_Data.index = range(1, len(Well_Data) + 1)
-
-
-
-
-Well_Data['LAST WELL TEST']=pd.to_datetime(Well_Data['LAST WELL TEST'])
-Well_Data['LAST WELL TEST']=Well_Data['LAST WELL TEST'].dt.strftime('%d-%m-%Y')
-
-Tested_Today= int(Well_Data[Well_Data['LAST WELL TEST']=='22-09-2026']['LAST WELL TEST'].count())
-
-Tested_Today_Per = float(Tested_Today/(Well_Data['STATUS']!='SI').sum())*100
-
-
-
-
-
-
-
-
-
-# Evaluation of Oil Variance
-
-
-
-
-
-
-
-
-
-
 
 
 WF= pd.read_excel(URL, sheet_name="WATER FLOOD WELLS")
@@ -292,10 +261,6 @@ T_201_Today_Val = float(T_201_Today.iloc[1,3].replace(',','.'))
 T_201_YT_Val = float(T_201_YT.iloc[2,3].replace(',','.'))
 T_201_Var = (abs(T_201_Today_Val-T_201_YT_Val)/T_201_Today_Val)*100
 
-T_201_Today_Val
-T_201_YT_Val
-T_201_Var
-
 
 if T_201_Var == 0:
     df = pd.DataFrame({"Excellent Tank-201 Variance": ['Tank-201 Variance',T_201_Var]})
@@ -329,5 +294,17 @@ else:
     df = pd.DataFrame({"Quality Issue Tank-202 Variance": ['Tank-202',T_202_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
+
+
+Well_Data['LAST WELL TEST']=pd.to_datetime(Well_Data['LAST WELL TEST'])
+Well_Data['LAST WELL TEST']=Well_Data['LAST WELL TEST'].dt.strftime('%d-%m-%Y')
+
+Tested_Today= int(Well_Data[Well_Data['LAST WELL TEST']=='22-09-2026']['LAST WELL TEST'].count())
+
+Tested_Today_Per = float(Tested_Today/(Well_Data['STATUS']!='SI').sum())*100
+Tested_Today_Per
+
+
+
 
 
