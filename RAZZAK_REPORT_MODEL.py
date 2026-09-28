@@ -309,6 +309,25 @@ else:
     df = pd.DataFrame({"Quality Issue Tank-201 Variance": ['Tank-201',T_201_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
+    
+T_202_Today = pd.read_excel(URL, sheet_name="TANKS")
+T_202_YT =pd.read_excel(url, sheet_name="TANKS")
 
+T_202_Today_Val = float(T_202_Today.iloc[3,3].replace(',','.'))
+T_202_YT_Val = float(T_202_YT.iloc[4,3].replace(',','.'))
+T_202_Var = (abs(T_202_Today_Val-T_202_YT_Val)/T_202_Today_Val)*100
+
+if T_202_Var == 0:
+    df = pd.DataFrame({"Excellent Tank-202 Variance": ['Tank-202 Variance',T_202_Var]})
+    styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
+    st.dataframe(styled_df)
+elif T_202_Var<=.1:
+    df = pd.DataFrame({"Excellent Tank-202 Variance": ['Tank-202 Variance',T_202_Var]})
+    styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
+    st.dataframe(styled_df)
+else:
+    df = pd.DataFrame({"Quality Issue Tank-202 Variance": ['Tank-202',T_202_Var]})
+    styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
+    st.dataframe(styled_df)
 
 
