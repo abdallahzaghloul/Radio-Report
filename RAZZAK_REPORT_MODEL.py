@@ -265,10 +265,10 @@ st.markdown(" <right>  <h1> Alerts </h1> </font> </right> </h1> ",
 st.markdown('<p style="color:blue; font-size:24px;">This is blue and 24 pixels big!</p>',
     unsafe_allow_html=True)
 
+# Oil Variance Alerts
 Oil_Prod=pd.read_excel(URL, sheet_name="REPORT", header = None)
 Oil_Var= int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7])
 Oil_Var_Per= abs(int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7]))*100
-
 
 if Oil_Var_Per<= 5:
     df = pd.DataFrame({"High Variance Warning": [Oil_Var_Per]})
@@ -279,13 +279,18 @@ else:
     styled_df = df.style.set_properties(**{"background-color": "#FFFF00", "color": "white"})
     st.dataframe(styled_df)
 
-
-
-Well_Data_Comp
-WF_Comp
+#Completeness Alerts
 Data_Comp = Well_Data_Comp + WF_Comp
 if Data_Comp >=80:
-  Deduction.append(0)
+    df = pd.DataFrame({"Quality Issues Alerts": [Data_Comp]})
+    styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
+    st.dataframe(styled_df)
+
 elif Data_Comp <80:
-  Deduction.append(2)
+    df = pd.DataFrame({"Critical Alerts": [Data_Comp]})
+    styled_df = df.style.set_properties(**{"background-color": "#8FD9FB", "color": "white"})
+    st.dataframe(styled_df)
+
+
+
 
