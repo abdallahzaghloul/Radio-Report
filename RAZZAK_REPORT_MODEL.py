@@ -277,11 +277,11 @@ if Oil_Var_Per==0:
 
 elif Oil_Var_Per<= 5:
     df = pd.DataFrame({"High Variance Warning": ['The Oil Variance %',Oil_Var_Per]})
-    styled_df = df.style.set_properties(**{"background-color": "#9B111E", "color": "white"})
+    styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
 else:
     df = pd.DataFrame({"Critical Alerts": ['The Oil Variance %',Oil_Var_Per]})
-    styled_df = df.style.set_properties(**{"background-color": "#FFFF00", "color": "white"})
+    styled_df = df.style.set_properties(**{"background-color": "#B30E08", "color": "white"})
     st.dataframe(styled_df)
 
 #Completeness Alerts
