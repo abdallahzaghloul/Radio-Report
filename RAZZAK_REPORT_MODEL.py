@@ -165,7 +165,6 @@ if Oil_Var_Per<= 5:
     df = pd.DataFrame({"High Variance Warning": [10, 20, 30]})
     styled_df = df.style.set_properties(**{"background-color": "#1E3A8A", "color": "white"})
     st.dataframe(styled_df)
-
 else:
   Deduction.append(10)
 
