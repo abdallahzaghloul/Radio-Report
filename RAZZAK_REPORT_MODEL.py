@@ -35,15 +35,15 @@ Deduction = []
 
 Start_Date = st.text_input("Enter Start Date [30-08-2025]")
 Start_Date =Start_Date.replace('-','_') 
-url = "RAZZAK_OIL_REPORT_"+Start_Date
+
 
 End_Date = st.text_input("Enter End Date [31-08-2025]")
 End_Date =End_Date.replace('-','_')
-URL = "RAZZAK_OIL_REPORT_"+End_Date
+URL = "RAZZAK_OIL_REPORT_"+End_Date+'.xlsx'
 
 if st.button("Selective RAZZAK Report Dates"):
-    URL = "RAZZAK_OIL_REPORT_"+'.xlsx'
-    url = "RAZZAK_OIL_REPORT_"+'.xlsx'
+    URL = "RAZZAK_OIL_REPORT_"+End_Date+'.xlsx'
+    url = "RAZZAK_OIL_REPORT_"+Start_Date+'.xlsx'
 
 
 elif st.button("Default RAZZAK Report Dates"):    
