@@ -298,12 +298,12 @@ elif Well_Data_Comp <80:
 
 
 if WF_Comp >=80:
-    df = pd.DataFrame({"Excellent Data Comleteness": ['Well Data Completeness',WF_Comp]})
+    df = pd.DataFrame({"Excellent Data Comleteness": ['Water Flood Completeness',WF_Comp]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
 
 elif WF_Comp <80:
-    df = pd.DataFrame({"Quality Issues Alerts": ['Well Data Completeness',WF_Comp]})
+    df = pd.DataFrame({"Quality Issues Alerts": ['Water Flood Completeness',WF_Comp]})
     styled_df = df.style.set_properties(**{"background-color": "#8FD9FB", "color": "white"})
     st.dataframe(styled_df)
 
