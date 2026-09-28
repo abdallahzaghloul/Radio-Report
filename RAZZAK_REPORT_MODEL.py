@@ -139,30 +139,6 @@ Tested_Today_Per = float(Tested_Today/(Well_Data['STATUS']!='SI').sum())*100
 
 
 
-T_201_Today = pd.read_excel(URL, sheet_name="TANKS")
-T_201_YT =pd.read_excel(url, sheet_name="TANKS")
-#T_201_Today.iloc[1,3]==T_201_YT.iloc[2,3]
-
-if T_201_Today.iloc[1,3]==T_201_YT.iloc[2,3]:
-  Deduction.append(0)
-  Tanks_Alert = 'The Tanks reading are Identical'
-elif abs((T_201_Today.iloc[1,3]-T_201_YT.iloc[2,3])/T_201_Today.iloc[1,3])*100<.1:
-  Deduction.append(0)
-else:
-  Deduction.append(2)
-
-
-T_202_Today = pd.read_excel(URL, sheet_name="TANKS")
-T_202_YT =pd.read_excel(url, sheet_name="TANKS")
-#T_202_Today.iloc[3,3]==T_202_YT.iloc[4,3]
-
-if T_202_Today.iloc[3,3]==T_202_YT.iloc[4,3]:
-  Deduction.append(0)
-  Tanks_Alert = 'The Tanks reading are Identical'
-elif abs((T_202_Today.iloc[3,3]-T_202_YT.iloc[4,3])/T_202_Today.iloc[3,3])*100<.1:
-  Deduction.append(0)
-else:
-  Deduction.append(2)
 
 
 WF= pd.read_excel(URL, sheet_name="WATER FLOOD WELLS")
@@ -307,4 +283,35 @@ elif WF_Comp <80:
     styled_df = df.style.set_properties(**{"background-color": "#8FD9FB", "color": "white"})
     st.dataframe(styled_df)
 
+# Tanks Variance.
 
+T_201_Today = pd.read_excel(URL, sheet_name="TANKS")
+T_201_YT =pd.read_excel(url, sheet_name="TANKS")
+
+T_201_Var = T_201_Today.iloc[1,3]-T_201_YT.iloc[2,3]
+
+if T_201_Var = 0:
+    df = pd.DataFrame({"Excellent Tank-201 Variance": ['Tank-201 Variance',T_201_Var]})
+    styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
+    st.dataframe(styled_df)
+elif abs((T_201_Today.iloc[1,3]-T_201_YT.iloc[2,3])/T_201_Today.iloc[1,3])*100<=.1:
+    df = pd.DataFrame({"Excellent Tank-201 Variance": ['Tank-201 Variance',T_201_Var]})
+    styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
+    st.dataframe(styled_df)
+else:
+    df = pd.DataFrame({"High Tank-201 Variance": ['Tank-201',T_201_Var]})
+    styled_df = df.style.set_properties(**{"background-color": "#8FD9FB", "color": "white"})
+    st.dataframe(styled_df)
+
+
+
+T_202_Today = pd.read_excel(URL, sheet_name="TANKS")
+T_202_YT =pd.read_excel(url, sheet_name="TANKS")
+
+if T_202_Today.iloc[3,3]==T_202_YT.iloc[4,3]:
+  Deduction.append(0)
+  Tanks_Alert = 'The Tanks reading are Identical'
+elif abs((T_202_Today.iloc[3,3]-T_202_YT.iloc[4,3])/T_202_Today.iloc[3,3])*100<.1:
+  Deduction.append(0)
+else:
+  Deduction.append(2)
