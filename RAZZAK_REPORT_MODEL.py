@@ -288,7 +288,7 @@ elif WF_Comp <80:
 T_201_Today = pd.read_excel(URL, sheet_name="TANKS")
 T_201_YT =pd.read_excel(url, sheet_name="TANKS")
 
-T_201_Var = T_201_Today.iloc[1,3]-T_201_YT.iloc[2,3]
+T_201_Var = int(T_201_Today.iloc[1,3])-int(T_201_YT.iloc[2,3])
 
 if T_201_Var == 0:
     df = pd.DataFrame({"Excellent Tank-201 Variance": ['Tank-201 Variance',T_201_Var]})
