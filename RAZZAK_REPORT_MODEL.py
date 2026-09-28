@@ -298,26 +298,24 @@ WRZK_REQ=WF.iloc[98,9]
 ERZK_REQ=WF.iloc[99,9]
 NRQ_REQ=WF.iloc[100,9]
 
-if abs((MRZK_INJ_REQ)/MRZK_REQ) < .05:
-    df = pd.DataFrame({"Excellent Test Coverage": ['Covered Tests Today',Tested_Today_Per]})
+MRZK_WF_Var = abs((MRZK_INJ_REQ)/MRZK_REQ)*100
+WRZK_WF_Var = abs((WRZK_INJ_REQ)/WRZK_REQ)*100
+ERZK_WF_Var = abs((ERZK_INJ_REQ)/ERZK_REQ)*100
+NRQ_WF_Var = abs((NRQ_INJ_REQ)/NRQ_REQ)*100
+
+if MRZK_WF_Var < =5:
+    df = pd.DataFrame({"MRZK INJ Validation": ['Covered Tests Today',Tested_Today_Per]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
-elif abs((MRZK_INJ_REQ)/MRZK_REQ) > .05:
+elif MRZK_WF_Var > 5:
   Deduction.append(5)
 
-if abs((WRZK_INJ_REQ)/WRZK_REQ) < .05:
-  Deduction.append(0)
-elif abs((WRZK_INJ_REQ)/WRZK_REQ) > .05:
-  Deduction.append(5)
 
-if abs((ERZK_INJ_REQ)/ERZK_REQ) < .05:
-  Deduction.append(0)
-elif abs((ERZK_INJ_REQ)/ERZK_REQ) > .05:
-  Deduction.append(5)
 
-if abs((NRQ_INJ_REQ)/NRQ_REQ) < .05:
-  Deduction.append(0)
-elif abs((NRQ_INJ_REQ)/NRQ_REQ) > .05:
-  Deduction.append(5)
+
+
+
+
+
 
 
