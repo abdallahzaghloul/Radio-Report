@@ -288,13 +288,15 @@ elif WF_Comp <80:
 T_201_Today = pd.read_excel(URL, sheet_name="TANKS")
 T_201_YT =pd.read_excel(url, sheet_name="TANKS")
 
-T_201_Var = int(T_201_Today.iloc[1,3])-int(T_201_YT.iloc[2,3])
+T_201_Today_Val = float(T_201_Today.iloc[1,3].replace(',','.'))
+T_201_YT_Val = float(T_201_YT.iloc[1,3].replace(',','.'))
+T_201_Var = T_201_Today_Val-T_201_YT_Val
 
 if T_201_Var == 0:
     df = pd.DataFrame({"Excellent Tank-201 Variance": ['Tank-201 Variance',T_201_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
-elif abs((T_201_Today.iloc[1,3]-T_201_YT.iloc[2,3])/T_201_Today.iloc[1,3])*100<=.1:
+elif abs(T_201_Var)/T_201_Today_Val)*100<=.1:
     df = pd.DataFrame({"Excellent Tank-201 Variance": ['Tank-201 Variance',T_201_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
@@ -305,13 +307,3 @@ else:
 
 
 
-T_202_Today = pd.read_excel(URL, sheet_name="TANKS")
-T_202_YT =pd.read_excel(url, sheet_name="TANKS")
-
-if T_202_Today.iloc[3,3]==T_202_YT.iloc[4,3]:
-  Deduction.append(0)
-  Tanks_Alert = 'The Tanks reading are Identical'
-elif abs((T_202_Today.iloc[3,3]-T_202_YT.iloc[4,3])/T_202_Today.iloc[3,3])*100<.1:
-  Deduction.append(0)
-else:
-  Deduction.append(2)
