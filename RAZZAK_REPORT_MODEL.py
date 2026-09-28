@@ -303,7 +303,7 @@ WF_Data_24_Null=int(WF_Data_24['DOWNTIME CAUSE'].isnull().sum())
 WF_Data_24_Null_Per = WF_Data_24_Null / WF_Data_24.shape[0]
 WF_Data_INJ_Null_Per = WF_Data_INJ_Null/ (WF_Data_INJ.shape[0]*WF_Data_INJ.shape[1])
 WF_Comp = 100-(WF_Data_INJ_Null_Per+WF_Data_24_Null_Per)*100
-WF_Comp
+
 
 
 
