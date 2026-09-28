@@ -143,42 +143,29 @@ st.write("Hello")
 st.markdown('<p style="color:blue; font-size:24px;">This is blue and 24 pixels big!</p>',
     unsafe_allow_html=True)
 
-df = pd.DataFrame(
-    {"A": [10, 20, 30], "B": [15, 25, 35], "C": [100, 200, 300]}
-)
-
 # Apply a solid blue background with white text
-styled_df = df.style.set_properties(
-    **{"background-color": "#1E3A8A", "color": "white"})
+#styled_df = df.style.set_properties(
+#    **{"background-color": "#1E3A8A", "color": "white"})
 
-# Render in Streamlit
-st.dataframe(styled_df)
-
-
+#st.dataframe(styled_df)
 
 
 import streamlit as st
 
-st.set_page_config(page_title="My Cool App",page_icon="🎈",)
-
+st.set_page_config(page_title="RZAZZAK REPORT ",page_icon="🎈",)
 
 # Evaluation of Oil Variance
 
 Oil_Prod=pd.read_excel(URL, sheet_name="REPORT", header = None)
-
-
 Oil_Var= int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7])
-
-
-#if abs(Oil_Var*100) <4.99:
-#  print("Yallahwy El7gny Ya 3my Mansour")
-#elif abs(Oil_Var*100) <10 and abs(Oil_Var*100) >4.99:
-#  print("dlssf;jsf;dj")
-
 Oil_Var_Per= abs(int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7]))*100
 Deduction = []
+
 if Oil_Var_Per<= 5:
-  Deduction.append(2)
+    df = pd.DataFrame({"High Variance Warning": [10, 20, 30])
+    styled_df = df.style.set_properties(**{"background-color": "#1E3A8A", "color": "white"})
+    st.dataframe(styled_df)
+
 else:
   Deduction.append(10)
 
