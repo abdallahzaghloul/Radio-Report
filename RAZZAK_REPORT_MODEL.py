@@ -34,13 +34,13 @@ URL="RAZZAK_OIL_REPORT_22_SEP_26.xlsx"
 #URL = "RAZZAK_OIL_REPORT_"&Today_Report
 #url = "RAZZAK_OIL_REPORT_"&YT_Report
 
-Start_Date = st.text_input("Enter Start Date")
-if Start_Date:
-  D01 = "RAZZAK_OIL_REPORT_"&Start_Date
-
-End_Date = st.text_input("Enter End Date")
-if End_Date:
-  D02 = "RAZZAK_OIL_REPORT_"&End_Date
+if st.button("Selective RAZZAK Report Dates"):
+    Start_Date = st.text_input("Enter Start Date")
+    if Start_Date:
+        D01 = "RAZZAK_OIL_REPORT_"&Start_Date
+    End_Date = st.text_input("Enter End Date")
+    if End_Date:
+        D02 = "RAZZAK_OIL_REPORT_"&End_Date
     
 
 RAZZAK_File=pd.ExcelFile(URL)
