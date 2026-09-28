@@ -1,7 +1,8 @@
 from PIL import Image
-import streamlit as st
 import numpy as np 
-import pandas as pd 
+import streamlit as st
+
+st.set_page_config(page_title="RZAZZAK REPORT ",page_icon="🎈",)import pandas as pd 
 
 from datetime import date, timedelta
 from datetime import datetime as dt
@@ -19,7 +20,7 @@ with col2:
 with col1:
     st.image(image, width = 150)
   
-
+Deduction = []
 url="RAZZAK_OIL_REPORT_21_SEP_26.xlsx"
 URL="RAZZAK_OIL_REPORT_22_SEP_26.xlsx"
 
@@ -109,17 +110,6 @@ Well_Data=Well_Data.drop([0,1], axis=0)
 Well_Data.index = range(1, len(Well_Data) + 1)
 
 
-#(Well_Data['STATUS']=='SI').sum()
-
-#(Well_Data['STATUS']!='SI').sum()
-
-
-#(Well_Data['STATUS']).count()
-
-#(Well_Data['STATUS']=='SI').sum() + (Well_Data['STATUS']!='SI').sum() == (Well_Data['STATUS']).count()
-
-
-#Well_Data.columns
 
 
 Well_Data['LAST WELL TEST']=pd.to_datetime(Well_Data['LAST WELL TEST'])
@@ -131,42 +121,14 @@ Tested_Today_Per = float(Tested_Today/(Well_Data['STATUS']!='SI').sum())*100
 
 
 
-st.markdown(" <center>  <h1> RAZZAZK OIL REPORT ANALYSIS </h1> </font> </center> </h1> ",
-            unsafe_allow_html=True)
 
 
-st.markdown(" <right>  <h1> Alerts </h1> </font> </right> </h1> ",
-            unsafe_allow_html=True)
-st.write("Hello")
 
 
-st.markdown('<p style="color:blue; font-size:24px;">This is blue and 24 pixels big!</p>',
-    unsafe_allow_html=True)
 
-# Apply a solid blue background with white text
-#styled_df = df.style.set_properties(
-#    **{"background-color": "#1E3A8A", "color": "white"})
-
-#st.dataframe(styled_df)
-
-
-import streamlit as st
-
-st.set_page_config(page_title="RZAZZAK REPORT ",page_icon="🎈",)
 
 # Evaluation of Oil Variance
 
-Oil_Prod=pd.read_excel(URL, sheet_name="REPORT", header = None)
-Oil_Var= int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7])
-Oil_Var_Per= abs(int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7]))*100
-Deduction = []
-
-if Oil_Var_Per<= 5:
-    df = pd.DataFrame({"High Variance Warning": [10, 20, 30]})
-    styled_df = df.style.set_properties(**{"background-color": "#1E3A8A", "color": "white"})
-    st.dataframe(styled_df)
-else:
-  Deduction.append(10)
 
 
 
@@ -291,7 +253,28 @@ WF_Data_INJ_Null_Per = WF_Data_INJ_Null/ (WF_Data_INJ.shape[0]*WF_Data_INJ.shape
 WF_Comp = 100-(WF_Data_INJ_Null_Per+WF_Data_24_Null_Per)*100
 
 
+st.markdown(" <center>  <h1> RAZZAZK OIL REPORT ANALYSIS </h1> </font> </center> </h1> ",
+            unsafe_allow_html=True)
 
+
+st.markdown(" <right>  <h1> Alerts </h1> </font> </right> </h1> ",
+            unsafe_allow_html=True)
+
+
+st.markdown('<p style="color:blue; font-size:24px;">This is blue and 24 pixels big!</p>',
+    unsafe_allow_html=True)
+
+Oil_Prod=pd.read_excel(URL, sheet_name="REPORT", header = None)
+Oil_Var= int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7])
+Oil_Var_Per= abs(int(Oil_Prod.iloc[17,7]-Oil_Prod.iloc[17,6])/int(Oil_Prod.iloc[17,7]))*100
+
+
+if Oil_Var_Per<= 5:
+    df = pd.DataFrame({"High Variance Warning": [10, 20, 30]})
+    styled_df = df.style.set_properties(**{"background-color": "#1E3A8A", "color": "white"})
+    st.dataframe(styled_df)
+else:
+  Deduction.append(10)
 
 
 
