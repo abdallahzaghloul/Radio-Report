@@ -35,7 +35,7 @@ URL="RAZZAK_OIL_REPORT_22_SEP_26.xlsx"
 #url = "RAZZAK_OIL_REPORT_"&YT_Report
 
 Start_Date = st.text_input("Enter Start Date")
-if End_Date:
+if Start_Date:
   D01 = "RAZZAK_OIL_REPORT_"&Start_Date
 
 End_Date = st.text_input("Enter End Date")
