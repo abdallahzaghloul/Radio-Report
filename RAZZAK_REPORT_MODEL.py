@@ -302,7 +302,6 @@ MRZK_WF_Var = abs((MRZK_INJ_REQ)/MRZK_REQ)*100
 WRZK_WF_Var = abs((WRZK_INJ_REQ)/WRZK_REQ)*100
 ERZK_WF_Var = abs((ERZK_INJ_REQ)/ERZK_REQ)*100
 NRQ_WF_Var = abs((NRQ_INJ_REQ)/NRQ_REQ)*100
-
 if MRZK_WF_Var <= 5: 
     df = pd.DataFrame({"Excellent INJ Vs. REQ.": ['MRZK INJ Validation',MRZK_WF_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
