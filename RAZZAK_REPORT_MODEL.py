@@ -281,6 +281,11 @@ else:
 
 
 
-
-
+Well_Data_Comp
+WF_Comp
+Data_Comp = Well_Data_Comp + WF_Comp
+if Data_Comp >=80:
+  Deduction.append(0)
+elif Data_Comp <80:
+  Deduction.append(2)
 
