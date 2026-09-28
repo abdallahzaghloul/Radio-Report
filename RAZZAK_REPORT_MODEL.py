@@ -289,7 +289,7 @@ T_201_Today = pd.read_excel(URL, sheet_name="TANKS")
 T_201_YT =pd.read_excel(url, sheet_name="TANKS")
 
 T_201_Today_Val = float(T_201_Today.iloc[1,3].replace(',','.'))
-T_201_YT_Val = float(T_201_YT.iloc[1,3].replace(',','.'))
+T_201_YT_Val = float(T_201_YT.iloc[2,3].replace(',','.'))
 T_201_Var = (abs(T_201_Today_Val-T_201_YT_Val)/T_201_Today_Val)*100
 
 T_201_Today_Val
