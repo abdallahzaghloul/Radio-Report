@@ -42,13 +42,13 @@ End_Date =End_Date.replace('-','_')
 URL = "RAZZAK_OIL_REPORT_"+End_Date
 
 if st.button("Selective RAZZAK Report Dates"):
-    URL = "RAZZAK_OIL_REPORT_"+End_Date
-    url = "RAZZAK_OIL_REPORT_"+Start_Date
+    URL = "RAZZAK_OIL_REPORT_"+'.xlsx'
+    url = "RAZZAK_OIL_REPORT_"+'.xlsx'
 
 
 elif st.button("Default RAZZAK Report Dates"):    
-    URL = "RAZZAK_OIL_REPORT_"+Today_Report
-    url = "RAZZAK_OIL_REPORT_"+YT_Report
+    URL = "RAZZAK_OIL_REPORT_"+Today_Report+'.xlsx'
+    url = "RAZZAK_OIL_REPORT_"+YT_Report+'.xlsx'
 
 RAZZAK_File=pd.ExcelFile(URL)
 Excel_Sheets=RAZZAK_File.sheet_names
