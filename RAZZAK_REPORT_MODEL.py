@@ -285,14 +285,14 @@ else:
     st.dataframe(styled_df)
 
 #Completeness Alerts
-Data_Comp = Well_Data_Comp + WF_Comp
-if Data_Comp >=80:
-    df = pd.DataFrame({"Excellent Data Comleteness": ['Data Completeness',Data_Comp]})
+
+if Well_Data_Comp >=80:
+    df = pd.DataFrame({"Excellent Data Comleteness": ['Data Completeness',Well_Data_Comp]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
 
-elif Data_Comp <80:
-    df = pd.DataFrame({"Quality Issues Alerts": ['Data Completeness',Data_Comp]})
+elif Well_Data_Comp <80:
+    df = pd.DataFrame({"Quality Issues Alerts": ['Data Completeness',Well_Data_Comp]})
     styled_df = df.style.set_properties(**{"background-color": "#8FD9FB", "color": "white"})
     st.dataframe(styled_df)
 
