@@ -288,7 +288,7 @@ if T_202_Var == 0:
     st.dataframe(styled_df)
 elif T_202_Var<=.1:
     df = pd.DataFrame({"Excellent Tank-202 Variance": ['Tank-202 Variance',T_202_Var]})
-    styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
+    styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
 else:
     df = pd.DataFrame({"Quality Issue Tank-202 Variance": ['Tank-202',T_202_Var]})
@@ -299,11 +299,26 @@ else:
 Well_Data['LAST WELL TEST']=pd.to_datetime(Well_Data['LAST WELL TEST'])
 Well_Data['LAST WELL TEST']=Well_Data['LAST WELL TEST'].dt.strftime('%d-%m-%Y')
 
+Today = date.today()
+Today = Today.strftime('%d-%m-%Y')
+
+#Tested_Today= int(Well_Data[Well_Data['LAST WELL TEST']==Today]['LAST WELL TEST'].count())
 Tested_Today= int(Well_Data[Well_Data['LAST WELL TEST']=='22-09-2026']['LAST WELL TEST'].count())
 
 Tested_Today_Per = float(Tested_Today/(Well_Data['STATUS']!='SI').sum())*100
-Tested_Today_Per
 
+
+
+
+
+if Tested_Today_Per >= 25:
+    df = pd.DataFrame({"Excellent Test Coverage": ['Covered Tests Today',Tested_Today_Per]})
+    styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
+    st.dataframe(styled_df)
+elif Tested_Today_Per<25:
+    df = pd.DataFrame({"Quality Issue": ['Covered Tests Today',Tested_Today_Per]})
+    styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
+    st.dataframe(styled_df)
 
 
 
