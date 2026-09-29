@@ -337,10 +337,12 @@ if Tested_Today_Per >= 25:
     df = pd.DataFrame({"Excellent Test Coverage": ['Covered Tests Today',Tested_Today_Per]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
+    Deduction.append(0)
 elif Tested_Today_Per<25:
     df = pd.DataFrame({"Quality Issue": ['Covered Tests Today',Tested_Today_Per]})
     styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
+    Deduction.append(0)
 
 st.markdown(" <center>  <h1> Water Flood Validation </h1> </font> </center> </h1> ",  unsafe_allow_html=True)
 
