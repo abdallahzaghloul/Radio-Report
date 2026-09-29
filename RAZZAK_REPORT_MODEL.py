@@ -1,7 +1,7 @@
 from PIL import Image
 import numpy as np 
 import streamlit as st
-
+import matplotlib.pyplot as plt
 st.set_page_config(page_title="RZAZZAK REPORT ",page_icon="🎈",)
 import pandas as pd 
 
