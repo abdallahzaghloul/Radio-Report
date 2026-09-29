@@ -231,13 +231,13 @@ if Well_Data_Comp >=80:
     df = pd.DataFrame({"Excellent Data Comleteness": ['Well Data Completeness',Well_Data_Comp]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
-    Well_Data_Comp = 0
+    Well_Comp_Alert = 0
 
 elif Well_Data_Comp <80:
     df = pd.DataFrame({"Quality Issues Alerts": ['Well Data Completeness',Well_Data_Comp]})
     styled_df = df.style.set_properties(**{"background-color": "#8FD9FB", "color": "white"})
     st.dataframe(styled_df)
-    Well_Data_Comp = 2
+    Well_Comp_Alert = 2
 
 
 if WF_Comp >=80:
