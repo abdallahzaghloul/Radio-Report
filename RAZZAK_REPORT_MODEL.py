@@ -415,14 +415,14 @@ RAZZAK_REPORT_Evalulation =100-sum(Deduction)
 
 
 if RAZZAK_REPORT_Evalulation>=95:
-    colors=['#636B2F']
+    colors=['#636B2F','#000000' ]
 
 elif RAZZAK_REPORT_Evalulation>=85:
-    colors=['#FFCE1B']
+    colors=['#FFCE1B','#000000' ]
 elif RAZZAK_REPORT_Evalulation>=75:
-    colors=['#8FD9FB']
+    colors=['#8FD9FB','#000000' ]
 else:
-    colors=['#880808']
+    colors=['#880808','#000000' ]
 
 
 plt.figure(figsize=(6, 6)) # Sets a square figure size
@@ -432,7 +432,7 @@ RAZZAZK_REPORT_PI_CHART = [RAZZAK_REPORT_Evalulation,sum(Deduction)]
 
 
 fig, ax = plt.subplots()
-ax.pie(RAZZAZK_REPORT_PI_CHART,labels = ['A','B'],colors=colors, autopct='%1.1f%%', shadow=True,             startangle=140       )
+ax.pie(RAZZAZK_REPORT_PI_CHART,labels = ['RAZZAZK Val.','Deduction'],colors=colors, autopct='%1.1f%%', shadow=True,             startangle=140       )
 ax.axis('equal')
 st.pyplot(fig)
 #plt.show()
