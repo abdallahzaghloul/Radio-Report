@@ -207,15 +207,22 @@ if Oil_Var_Per==0:
     df = pd.DataFrame({"Excellent Oil Variance": ['The Oil Variance %',Oil_Var_Per]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
+    Oil_Var_Alert = 0
 
 elif Oil_Var_Per<= 5:
     df = pd.DataFrame({"High Variance Warning": ['The Oil Variance %',Oil_Var_Per]})
     styled_df = df.style.set_properties(**{"background-color": "#E1AD01", "color": "white"})
     st.dataframe(styled_df)
+    Oil_Var_Alert = 5
 else:
     df = pd.DataFrame({"Critical Alerts": ['The Oil Variance %',Oil_Var_Per]})
     styled_df = df.style.set_properties(**{"background-color": "#B30E08", "color": "white"})
     st.dataframe(styled_df)
+    Oil_Var_Alert = 10
+
+
+Deduction.append(Oil_Var_Alert)
+
 
 st.markdown(" <center>  <h1> Completeness Validation </h1> </font> </center> </h1> ",  unsafe_allow_html=True)
 
@@ -224,22 +231,35 @@ if Well_Data_Comp >=80:
     df = pd.DataFrame({"Excellent Data Comleteness": ['Well Data Completeness',Well_Data_Comp]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
+    Well_Data_Comp = 0
 
 elif Well_Data_Comp <80:
     df = pd.DataFrame({"Quality Issues Alerts": ['Well Data Completeness',Well_Data_Comp]})
     styled_df = df.style.set_properties(**{"background-color": "#8FD9FB", "color": "white"})
     st.dataframe(styled_df)
+    Well_Data_Comp = 2
 
 
 if WF_Comp >=80:
     df = pd.DataFrame({"Excellent Data Comleteness": ['Water Flood Completeness',WF_Comp]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
+    WF_Comp_Alert = 0
 
 elif WF_Comp <80:
     df = pd.DataFrame({"Quality Issues Alerts": ['Water Flood Completeness',WF_Comp]})
     styled_df = df.style.set_properties(**{"background-color": "#8FD9FB", "color": "white"})
     st.dataframe(styled_df)
+    WF_Comp_Alert = 2
+
+if WF_Comp_Alert==2 or Well_Comp_Alert==2:
+    Deduction.append(2)
+elif WF_Comp_Alert==0 or Well_Comp_Alert==0:
+    Deduction.append(0)
+
+
+
+
 
 st.markdown(" <center>  <h1> Tank Validation </h1> </font> </center> </h1> ",  unsafe_allow_html=True)
 
@@ -369,6 +389,6 @@ elif NRQ_WF_Var > 5:
 
 
 
-
+Deduction
 
 
