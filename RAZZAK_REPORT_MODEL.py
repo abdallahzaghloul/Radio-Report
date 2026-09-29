@@ -431,7 +431,7 @@ plt.title('RAZZAK REPORT EVALUATION TODAY')
 RAZZAZK_REPORT_PI_CHART = [RAZZAK_REPORT_Evalulation,sum(Deduction)]
 
 
-fig, ax = plt.plot()
+fig, ax = plt.subplots()
 ax.pie(RAZZAZK_REPORT_PI_CHART,labels = ['RAZZAZK Val.','Deduction'],colors=colors, autopct='%1.1f%%', shadow=True,             startangle=140       )
 ax.axis('equal')
 st.pyplot(fig)
