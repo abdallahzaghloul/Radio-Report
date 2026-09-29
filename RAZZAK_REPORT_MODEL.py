@@ -430,9 +430,10 @@ plt.title('RAZZAK REPORT EVALUATION TODAY')
 
 RAZZAZK_REPORT_PI_CHART = [RAZZAK_REPORT_Evalulation,sum(Deduction)]
 
-plt.pie(RAZZAZK_REPORT_PI_CHART,labels = ['A','B'],colors=colors, autopct='%1.1f%%', shadow=True,             startangle=140       )
+fig=plt.pie(RAZZAZK_REPORT_PI_CHART,labels = ['A','B'],colors=colors, autopct='%1.1f%%', shadow=True,             startangle=140       )
+st.pyplot(fig)
 
-plt.show()
+#plt.show()
 
 
 
