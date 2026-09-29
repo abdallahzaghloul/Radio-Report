@@ -275,14 +275,17 @@ if T_201_Var == 0:
     df = pd.DataFrame({"Excellent Tank-201 Variance": ['Tank-201 Variance',T_201_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
+    T_201_Alert = 0
 elif T_201_Var<=.1:
     df = pd.DataFrame({"Excellent Tank-201 Variance": ['Tank-201 Variance',T_201_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
+    T_201_Alert = 0
 else:
     df = pd.DataFrame({"Quality Issue Tank-201 Variance": ['Tank-201',T_201_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
+    T_201_Alert = 2
     
 T_202_Today = pd.read_excel(URL, sheet_name="TANKS")
 T_202_YT =pd.read_excel(url, sheet_name="TANKS")
@@ -295,14 +298,23 @@ if T_202_Var == 0:
     df = pd.DataFrame({"Excellent Tank-202 Variance": ['Tank-202 Variance',T_202_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
+    T_202_Alert = 0
 elif T_202_Var<=.1:
     df = pd.DataFrame({"Excellent Tank-202 Variance": ['Tank-202 Variance',T_202_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
+    T_202_Alert = 0
 else:
     df = pd.DataFrame({"Quality Issue Tank-202 Variance": ['Tank-202',T_202_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
+    T_202_Alert = 2
+if T_201_Alert ==0 or T_202_Alert ==2:
+    Deduction.append(2)
+elif T_201_Alert ==0 or T_202_Alert ==0:
+    Deduction.append(0)
+
+
 
 st.markdown(" <center>  <h1> Test Coverage Validation </h1> </font> </center> </h1> ",  unsafe_allow_html=True)
 
