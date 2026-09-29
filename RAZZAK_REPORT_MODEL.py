@@ -411,7 +411,16 @@ if WF_Alert>0:
 elif WF_Alert==0:
     Deduction.append(2)
 
-#RAZZAK_REPORT_Evalulation = 100-Deduction.sum()
+RAZZAK_REPORT_Evalulation = 100-sum(Deduction)
+if RAZZAK_REPORT_Evalulation>=95:
+    colors=['#636B2F']
+
+elif RAZZAK_REPORT_Evalulation>=85:
+    colors=['#FFCE1B']
+elif RAZZAK_REPORT_Evalulation>=75:
+    colors=['#8FD9FB']
+else:
+    colors=['#880808']
 
 
 
