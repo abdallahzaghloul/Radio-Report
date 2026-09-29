@@ -411,7 +411,8 @@ if WF_Alert>0:
 elif WF_Alert==0:
     Deduction.append(2)
 
-RAZZAK_REPORT_Evalulation =list(100-sum(Deduction))
+RAZZAK_REPORT_Evalulation =100-sum(Deduction)
+
 
 if RAZZAK_REPORT_Evalulation>=95:
     colors=['#636B2F']
@@ -427,8 +428,9 @@ else:
 plt.figure(figsize=(6, 6)) # Sets a square figure size
 plt.title('RAZZAK REPORT EVALUATION TODAY')
 
+RAZZAZK_REPORT_PI_CHART = [RAZZAK_REPORT_Evalulation,sum(Deduction)]
 
-plt.pie(RAZZAK_REPORT_Evaluation,colors=colors, autopct='%1.1f%%', shadow=True,             startangle=140       )
+plt.pie(RAZZAZK_REPORT_PI_CHART,labels = ['A','B'],colors=colors, autopct='%1.1f%%', shadow=True,             startangle=140       )
 
 plt.show()
 
