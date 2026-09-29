@@ -423,6 +423,19 @@ else:
     colors=['#880808']
 
 
+plt.figure(figsize=(6, 6)) # Sets a square figure size
+plt.title('RAZZAK REPORT EVALUATION TODAY')
+
+
+plt.pie(RAZZAK_REPORT_Evaluation,colors=colors, autopct='%1.1f%%', shadow=True,             startangle=140       )
+
+plt.show()
+
+
+
+
+
+
 
 
 
