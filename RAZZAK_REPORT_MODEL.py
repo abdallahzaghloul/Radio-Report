@@ -366,42 +366,50 @@ if MRZK_WF_Var <= 5:
     df = pd.DataFrame({"Excellent INJ Vs. REQ.": ['MRZK INJ Validation',MRZK_WF_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
+    MRZK_WF_Alert=0
 elif MRZK_WF_Var > 5:
     df = pd.DataFrame({"Quality Issue": ['MRZK INJ Validation',MRZK_WF_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
+    MRZK_WF_Alert=2
 if ERZK_WF_Var <= 5: 
     df = pd.DataFrame({"Excellent INJ Vs. REQ.": ['ERZK INJ Validation',ERZK_WF_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
+    ERZK_WF_Alert=0
 elif ERZK_WF_Var > 5:
     df = pd.DataFrame({"Quality Issue": ['ERZK INJ Validation',ERZK_WF_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
+    ERZK_WF_Alert=2
 
 if WRZK_WF_Var <= 5: 
     df = pd.DataFrame({"Excellent INJ Vs. REQ.": ['WRZK INJ Validation',WRZK_WF_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
+    WRZK_WF_Alert=0
 elif WRZK_WF_Var > 5:
     df = pd.DataFrame({"Quality Issue": ['WRZK INJ Validation',WRZK_WF_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
+    WRZK_WF_Alert=2
 
 if NRQ_WF_Var <= 5: 
     df = pd.DataFrame({"Excellent INJ Vs. REQ.": ['NRQ INJ Validation',NRQ_WF_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#008000", "color": "white"})
     st.dataframe(styled_df)
+    NRQ_WF_Alert=0
 elif NRQ_WF_Var > 5:
     df = pd.DataFrame({"Quality Issue": ['NRQ INJ Validation',NRQ_WF_Var]})
     styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
+    NRQ_WF_Alert=2
 
-
-
-
-
-
+WF_Alert = NRQ_WF_Alert+ MRZK_WF_Alert+ ERZK_WF_Alert+ WRZK_WF_Alert
+if WF_Alert>0:
+    Deduction.append(0)
+elif WF_Alert==0:
+    Deduction.append(2)
 
 Deduction
 
