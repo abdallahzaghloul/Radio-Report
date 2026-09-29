@@ -411,7 +411,7 @@ if WF_Alert>0:
 elif WF_Alert==0:
     Deduction.append(2)
 
-RAZZAK_REPORT_Evalulation = 100-Deduction.sum()
+#RAZZAK_REPORT_Evalulation = 100-Deduction.sum()
 
 
 
