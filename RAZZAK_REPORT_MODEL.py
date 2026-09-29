@@ -254,7 +254,7 @@ elif WF_Comp <80:
 
 if WF_Comp_Alert==2 or Well_Comp_Alert==2:
     Deduction.append(2)
-elif WF_Comp_Alert==0 or Well_Comp_Alert==0:
+elif WF_Comp_Alert==0 and Well_Comp_Alert==0:
     Deduction.append(0)
 
 
