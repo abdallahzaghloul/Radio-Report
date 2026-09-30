@@ -309,7 +309,7 @@ else:
     styled_df = df.style.set_properties(**{"background-color": "#305CDE", "color": "white"})
     st.dataframe(styled_df)
     T_202_Alert = 2
-if T_201_Alert ==0 or T_202_Alert ==2:
+if T_201_Alert ==2 or T_202_Alert ==2:
     Deduction.append(2)
 elif T_201_Alert ==0 or T_202_Alert ==0:
     Deduction.append(0)
