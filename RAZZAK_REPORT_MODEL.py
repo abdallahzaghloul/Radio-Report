@@ -438,8 +438,10 @@ st.pyplot(fig)
 #plt.show()
 
 
-
 st.session_state["RRE"]=RAZZAK_REPORT_Evalulation
+st.session_state["OnLine"]=Well_Data[(Well_Data['STATUS']!='SI')].shape[0]
+st.session_state["SI"]=Well_Data[(Well_Data['STATUS']=='SI')].shape[0]
+
 
 
 
