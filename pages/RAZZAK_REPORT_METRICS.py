@@ -40,8 +40,8 @@ URL = st.session_state["DRR"]
 url = st.session_state["YRR"]
 SI_Wells_No = st.session_state["SI"]
 On_Line_Wells_No = st.session_state["OnLine"]
-#st.session_state["OPT"]
-#st.session_state["OPY"]
+OPT= st.session_state["OPT"]
+OPY= st.session_state["OPY"]
 
 
 st.write(f"{RRE} %")
