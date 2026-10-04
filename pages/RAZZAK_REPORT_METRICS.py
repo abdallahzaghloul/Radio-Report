@@ -56,23 +56,8 @@ OPY
 OPDiff = OPT-OPY
 OPDiff
 WSW
+WD= WD[(WD['STATUS']!="SI"]
 WD
-
-
-
-RAZZAK_File=pd.ExcelFile(URL)
-Excel_Sheets=RAZZAK_File.sheet_names
-Sheet_Check_List=[]
-for i in range (1,len(Excel_Sheets)):
-  try:
-    pd.read_excel(URL, sheet_name=Excel_Sheets[i])
-    A=True
-  except:
-    A=False;
-  Sheet_Check_List.append(A)
-Excel_Check_Report= pd.DataFrame(Excel_Sheets,columns=["Excel Sheets"])
-Excel_Check_Report["Sheet Existence"]= pd.Series(Sheet_Check_List)
-
 
 
 
