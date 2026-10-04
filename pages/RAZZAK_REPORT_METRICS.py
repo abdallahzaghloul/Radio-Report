@@ -10,26 +10,14 @@ from datetime import datetime as dt
 
 Today = date.today()
 
-Today_Report = Today.strftime('%d_%m_%Y')
-YT_Report = dt.strptime(Today_Report, "%d_%m_%Y") - timedelta(days=1)
-YT_Report=YT_Report.strftime("%d_%m_%Y")
-
 
 im = Image.open("KPC.jpg")
 image = np.array(im)
 
-imm = Image.open("Apache.jpg")
-imagee = np.array(imm)
-col1, col2 = st.columns([1, 2])
-with col2:
-    st.image(imagee, width = 150)
-with col1:
-    st.image(image, width = 150)
-  
-Deduction = []
+st.image(image, width = 150)
 
-URL = "RAZZAK_OIL_REPORT_"+"22-_09_2026"+'.xlsx'
-url = "RAZZAK_OIL_REPORT_"+"21-_09_2026"+'.xlsx'
+URL = "RAZZAK_OIL_REPORT_22-_09_2026.xlsx"
+url = "RAZZAK_OIL_REPORT_21-_09_2026.xlsx"
 
 
 RAZZAK_File=pd.ExcelFile(URL)
