@@ -56,7 +56,7 @@ OPY
 OPDiff = OPT-OPY
 OPDiff
 WSW
-WD= WD[(WD['STATUS']!="SI"]
+WD= WD[WD['STATUS']!="SI"]
 WD
 
 
