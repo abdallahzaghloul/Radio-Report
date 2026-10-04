@@ -43,6 +43,8 @@ On_Line_Wells_No = st.session_state["OnLine"]
 OPT= st.session_state["OPT"]
 OPY= st.session_state["OPY"]
 WSW=st.session_state["WSW"]
+WD = st.session_state['WD']
+
 
 st.write(f"{RRE} %")
 URL
@@ -54,6 +56,10 @@ OPY
 OPDiff = OPT-OPY
 OPDiff
 WSW
+WD
+
+
+
 RAZZAK_File=pd.ExcelFile(URL)
 Excel_Sheets=RAZZAK_File.sheet_names
 Sheet_Check_List=[]
