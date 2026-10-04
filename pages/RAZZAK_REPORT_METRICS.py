@@ -53,6 +53,9 @@ st.metric(label="Total Users", value="1,245")
 
 st.text_input("Edit shared text:", key="shared_text")
 
-#current_x = st.session_state["X"]
-st.write(st.session_state["X"])
+current_x = st.session_state["X"]
+current_x 
+
+
+
 
