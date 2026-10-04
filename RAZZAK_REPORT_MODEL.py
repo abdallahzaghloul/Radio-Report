@@ -439,6 +439,7 @@ st.pyplot(fig)
 
 
 
+st.session_state["RRE"]=RAZZAK_REPORT_Evalulation
 
 
 
