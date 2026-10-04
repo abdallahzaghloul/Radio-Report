@@ -134,6 +134,8 @@ Well_Data.columns=Well_Data.columns.str.strip()
 Well_Data=Well_Data.drop([0,1], axis=0)
 Well_Data.index = range(1, len(Well_Data) + 1)
 
+
+
 Well_Data_SRP = Well_Data[Well_Data['STATUS']=="SRP"]
 Well_Data_SRP=Well_Data_SRP.drop(columns=['AMPS', 'HZ', 'MOTOR RATING AMP','WELL TYPE', 'MOTOR LOADING PERCENTAGE','EST PRODN','UNNAMED: 19','UNNAMED: 37','DOWNTIME CAUSEINPUT WILL BE BLUE IF CAUSE REQUIRED'])
 Well_Data_SRP_Null=int(Well_Data_SRP.isnull().sum().sum())
@@ -455,9 +457,9 @@ st.session_state["DRR"]=URL
 st.session_state["YRR"]=url
 st.session_state["OPT"]=int(Oil_Prod.iloc[17,7])
 st.session_state["OPY"]=int(Oil_Prod.iloc[17,6])
-
+st.session_state['WD']= Well_Data
 st.session_state["WSW"]=WSW_Data
-
+st.session_state['WD']= Well_Data
 
 
 
