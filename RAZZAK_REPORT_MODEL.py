@@ -432,8 +432,13 @@ RAZZAZK_REPORT_PI_CHART = [RAZZAK_REPORT_Evalulation,sum(Deduction)]
 
 
 WSW_Data= pd.read_excel(URL, sheet_name="WATER FLOOD WELLS",usecols='B:S',skiprows=81, nrows=14)
+WSW_Data.columns=WSW_Data.columns.str.upper()
+WSW_Data.columns=WSW_Data.columns.str.replace(".1","")
+WSW_Data.columns=WSW_Data.columns.str.replace("\n","")
+WSW_Data.columns=WSW_Data.columns.str.strip()
+WSW_Data=WSW_Data.drop([0],axis=0)
+WSW_Data.index = range(1, len(WSW_Data) + 1)
 WSW_Data
-
 
 
 fig, ax = plt.subplots()
