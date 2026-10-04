@@ -456,7 +456,7 @@ st.session_state["YRR"]=url
 st.session_state["OPT"]=int(Oil_Prod.iloc[17,7])
 st.session_state["OPY"]=int(Oil_Prod.iloc[17,6])
 
-st.session_state["WSW"]=WSW
+st.session_state["WSW"]=WSW_Data
 
 
 
