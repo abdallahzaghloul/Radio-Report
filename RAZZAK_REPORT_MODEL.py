@@ -442,7 +442,7 @@ WSW_Data.index = range(1, len(WSW_Data) + 1)
 
 
 fig, ax = plt.subplots()
-ax.pie(RAZZAZK_REPORT_PI_CHART,labels = ['RAZZAZK Val.','Deduction'],colors=colors, autopct='%1.1f%%', shadow=True,             startangle=140       )
+ax.pie(RAZZAK_REPORT_PI_CHART,labels = ['RAZZAZK Val.','Deduction'],colors=colors, autopct='%1.1f%%', shadow=True,             startangle=140       )
 ax.axis('equal')
 st.pyplot(fig)
 #plt.show()
