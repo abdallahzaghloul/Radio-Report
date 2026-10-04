@@ -438,7 +438,7 @@ WSW_Data.columns=WSW_Data.columns.str.replace("\n","")
 WSW_Data.columns=WSW_Data.columns.str.strip()
 WSW_Data=WSW_Data.drop([0],axis=0)
 WSW_Data.index = range(1, len(WSW_Data) + 1)
-WSW_Data
+
 
 
 fig, ax = plt.subplots()
@@ -455,6 +455,8 @@ st.session_state["DRR"]=URL
 st.session_state["YRR"]=url
 st.session_state["OPT"]=int(Oil_Prod.iloc[17,7])
 st.session_state["OPY"]=int(Oil_Prod.iloc[17,6])
+
+st.session_state["WSW"]=WSW
 
 
 
