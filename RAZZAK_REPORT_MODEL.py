@@ -431,6 +431,11 @@ plt.title('RAZZAK REPORT EVALUATION TODAY')
 RAZZAZK_REPORT_PI_CHART = [RAZZAK_REPORT_Evalulation,sum(Deduction)]
 
 
+WSW_Data= pd.read_excel(URL, sheet_name="WATER FLOOD WELLS",usecols='B:S',skiprows=81, nrows=74)
+WSW_Data
+
+
+
 fig, ax = plt.subplots()
 ax.pie(RAZZAZK_REPORT_PI_CHART,labels = ['RAZZAZK Val.','Deduction'],colors=colors, autopct='%1.1f%%', shadow=True,             startangle=140       )
 ax.axis('equal')
