@@ -51,7 +51,7 @@ import streamlit as st
 st.metric(label="Total Users", value="1,245")
 
 
-
+st.text_input("Edit shared text:", key="shared_text")
 
 
 
