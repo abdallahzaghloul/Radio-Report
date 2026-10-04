@@ -431,7 +431,7 @@ plt.title('RAZZAK REPORT EVALUATION TODAY')
 RAZZAZK_REPORT_PI_CHART = [RAZZAK_REPORT_Evalulation,sum(Deduction)]
 
 
-WSW_Data= pd.read_excel(URL, sheet_name="WATER FLOOD WELLS",usecols='B:S',skiprows=81, nrows=14)
+WSW_Data= pd.read_excel(URL, sheet_name="WATER FLOOD WELLS",usecols='B:Y',skiprows=81, nrows=14)
 WSW_Data.columns=WSW_Data.columns.str.upper()
 WSW_Data.columns=WSW_Data.columns.str.replace(".1","")
 WSW_Data.columns=WSW_Data.columns.str.replace("\n","")
