@@ -7,6 +7,7 @@ import pandas as pd
 
 from datetime import date, timedelta
 from datetime import datetime as dt
+st.metric(label="Total Users", value="1,245")
 
 Today = date.today()
 
@@ -26,7 +27,19 @@ st.markdown(" <center>  <h1> RAZZAZK OIL REPORT METRICS </h1> </font> </center> 
 
 
 
-URL = "RAZZAK_OIL_REPORT_22_09_2026.xlsx"
+
+#st.session_state["RRE"]=RAZZAK_REPORT_Evalulation
+#st.session_state["OnLine"]=Well_Data[(Well_Data['STATUS']!='SI')].shape[0]
+#st.session_state["SI"]=Well_Data[(Well_Data['STATUS']=='SI')].shape[0]
+#st.session_state["DRR"]=URL
+#st.session_state["YRR"]=url
+#URL = "RAZZAK_OIL_REPORT_22_09_2026.xlsx"
+
+RRE = st.session_state["RRE"]
+URL = st.session_state["DRR"]
+url = st.session_state["YRR"]
+SI_Wells_No = st.session_state["SI"]
+On_Line_Wells_No = st.session_state["OnLine"]
 
 
 RAZZAK_File=pd.ExcelFile(URL)
@@ -45,16 +58,6 @@ Excel_Check_Report["Sheet Existence"]= pd.Series(Sheet_Check_List)
 
 
 
-import streamlit as st
-
-# Display a simple big number with a label
-st.metric(label="Total Users", value="1,245")
-
-
-st.text_input("Edit shared text:", key="shared_text")
-
-current_x = st.session_state["RRE"]
-current_x 
 
 
 
