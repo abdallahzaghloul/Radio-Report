@@ -35,11 +35,16 @@ st.markdown(" <center>  <h1> RAZZAZK OIL REPORT METRICS </h1> </font> </center> 
 #st.session_state["YRR"]=url
 #URL = "RAZZAK_OIL_REPORT_22_09_2026.xlsx"
 
-X = st.session_state["RRE"]
+RRE = st.session_state["RRE"]
 URL = st.session_state["DRR"]
 url = st.session_state["YRR"]
 SI_Wells_No = st.session_state["SI"]
 On_Line_Wells_No = st.session_state["OnLine"]
+RRE
+URL
+url
+SI_Wells_No
+On_Line_Wells_No
 
 
 RAZZAK_File=pd.ExcelFile(URL)
