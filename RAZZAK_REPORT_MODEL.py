@@ -428,7 +428,7 @@ else:
 plt.figure(figsize=(6, 6)) # Sets a square figure size
 plt.title('RAZZAK REPORT EVALUATION TODAY')
 
-RAZZAZK_REPORT_PI_CHART = [RAZZAK_REPORT_Evalulation,sum(Deduction)]
+RAZZAK_REPORT_PI_CHART = [RAZZAK_REPORT_Evalulation,sum(Deduction)]
 
 
 WSW_Data= pd.read_excel(URL, sheet_name="WATER FLOOD WELLS",usecols='B:Y',skiprows=81, nrows=14)
@@ -442,7 +442,7 @@ WSW_Data.index = range(1, len(WSW_Data) + 1)
 
 
 fig, ax = plt.subplots()
-ax.pie(RAZZAK_REPORT_PI_CHART,labels = ['RAZZAZK Val.','Deduction'],colors=colors, autopct='%1.1f%%', shadow=True,             startangle=140       )
+ax.pie(RAZZAK_REPORT_PI_CHART,labels = ['RAZZAK Val.','Deduction'],colors=colors, autopct='%1.1f%%', shadow=True,             startangle=140       )
 ax.axis('equal')
 st.pyplot(fig)
 #plt.show()
