@@ -42,7 +42,7 @@ SI_Wells_No = st.session_state["SI"]
 On_Line_Wells_No = st.session_state["OnLine"]
 OPT= st.session_state["OPT"]
 OPY= st.session_state["OPY"]
-
+WSW=st.session_state["WSW"]
 
 st.write(f"{RRE} %")
 URL
