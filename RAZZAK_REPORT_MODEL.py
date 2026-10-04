@@ -443,6 +443,8 @@ st.session_state["OnLine"]=Well_Data[(Well_Data['STATUS']!='SI')].shape[0]
 st.session_state["SI"]=Well_Data[(Well_Data['STATUS']=='SI')].shape[0]
 st.session_state["DRR"]=URL
 st.session_state["YRR"]=url
+st.session_state["OPT"]=int(Oil_Prod.iloc[17,7]
+st.session_state["OPY"]=int(Oil_Prod.iloc[17,6]
 
 
 
