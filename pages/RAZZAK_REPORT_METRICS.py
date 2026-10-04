@@ -16,8 +16,17 @@ image = np.array(im)
 
 st.image(image, width = 150)
 
+st.markdown(" <center>  <h1> RAZZAZK OIL REPORT METRICS </h1> </font> </center> </h1> ",
+            unsafe_allow_html=True)
+
+
+
+
+
+
+
+
 URL = "RAZZAK_OIL_REPORT_22-_09_2026.xlsx"
-#url = "RAZZAK_OIL_REPORT_21-_09_2026.xlsx"
 
 
 RAZZAK_File=pd.ExcelFile(URL)
@@ -32,12 +41,3 @@ for i in range (1,len(Excel_Sheets)):
   Sheet_Check_List.append(A)
 Excel_Check_Report= pd.DataFrame(Excel_Sheets,columns=["Excel Sheets"])
 Excel_Check_Report["Sheet Existence"]= pd.Series(Sheet_Check_List)
-st.markdown(" <center>  <h1> RAZZAZK OIL REPORT ANALYSIS </h1> </font> </center> </h1> ",
-            unsafe_allow_html=True)
-
-
-
-
-
-
-
