@@ -69,7 +69,7 @@ elif OPDiff ==0:
 
 WSW
 WD= WD[WD['STATUS']!="SI"]
-OWW = WD['HRS ONLINE'] *  WD['UNNAMED: 36']
+OWW = WD['HRS ONLINE'] *  WD['UNNAMED: 36']*.01
 OWW
 
 
