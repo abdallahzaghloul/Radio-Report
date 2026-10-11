@@ -59,17 +59,10 @@ elif OPDiff ==0:
             st.write(f" No Differ in Today Vs. YesterdayProd. ")
 
  
-
-
-
-
-
-
-
-
 WSW
 WD= WD[(WD['STATUS']!="SI") & WD['WELL NAME'] ]
 OWW = WD['HRS ONLINE'] *  WD['UNNAMED: 36']*.01
+WD
 OWW
 
 
