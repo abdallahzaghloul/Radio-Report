@@ -58,7 +58,8 @@ elif OPDiff >0:
 elif OPDiff ==0:
             st.write(f" No Differ in Today Vs. YesterdayProd. ")
 
- 
+
+
 WSW
 WD= WD[(WD['STATUS']!="SI") & WD['WELL NAME'] ]
 WD.index = range(1, len(WD) + 1)
@@ -67,9 +68,9 @@ OWW = WD['HRS ONLINE'] *  WD['UNNAMED: 36']*  WD['UNNAMED: 38']*.01*(1/24)
 
 Total_WC_Production=OWW.sum()
 OWW
-Total_WC_Production
 
 
+st.write(f"Today's Total Water Produced F/ Oil Producing Wells {[Total_WC_Production]} BW ")
 
 
 
