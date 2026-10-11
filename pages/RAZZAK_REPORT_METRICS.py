@@ -40,10 +40,6 @@ WD = st.session_state['WD']
 OPDiff = OPT-OPY
 
 
-WSW
-WD= WD[WD['STATUS']!="SI"]
-OWW = WD['HRS ONLINE'] *  WD['UNNAMED: 36']
-
 
 st.write(f"{RRE} %")
 st.write(f"[{URL}   &   {url} ] Selected Report Date")
@@ -64,6 +60,17 @@ elif OPDiff ==0:
 
  
 
+
+
+
+
+
+
+
+WSW
+WD= WD[WD['STATUS']!="SI"]
+OWW = WD['HRS ONLINE'] *  WD['UNNAMED: 36']
+OWW
 
 
 
