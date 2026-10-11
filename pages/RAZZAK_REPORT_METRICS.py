@@ -76,6 +76,6 @@ st.write(f"Today's Total Water Produced F/ Oil Producing Wells {[Total_WC_Produc
 WSW= WSW[WSW['STATUS']!="SI" ]
 WSW.index = range(1, len(WSW) + 1)
 
-
+WSW
 
 
