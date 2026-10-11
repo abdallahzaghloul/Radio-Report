@@ -66,7 +66,7 @@ WD.index = range(1, len(WD) + 1)
 OWW = WD['HRS ONLINE'] *  WD['UNNAMED: 36']*  WD['UNNAMED: 38']*.01*(1/24)
 
 Total_WC_Production=OWW.sum()
-
+Total_WC_Production
 
 
 
