@@ -20,14 +20,6 @@ st.image(image, width = 150)
 st.markdown(" <center>  <h1> RAZZAZK OIL REPORT METRICS </h1> </font> </center> </h1> ",
             unsafe_allow_html=True)
 
-
-
-
-
-
-
-
-
 #st.session_state["RRE"]=RAZZAK_REPORT_Evalulation
 #st.session_state["OnLine"]=Well_Data[(Well_Data['STATUS']!='SI')].shape[0]
 #st.session_state["SI"]=Well_Data[(Well_Data['STATUS']=='SI')].shape[0]
@@ -46,6 +38,7 @@ WSW=st.session_state["WSW"]
 WD = st.session_state['WD']
 
 
+
 st.write(f"{RRE} %")
 URL
 url
@@ -57,7 +50,8 @@ OPDiff = OPT-OPY
 OPDiff
 WSW
 WD= WD[WD['STATUS']!="SI"]
-WD
+OWW = WD['HRS ONLINE'] *  WD['UNNAMED: 36']
+
 
 
 
