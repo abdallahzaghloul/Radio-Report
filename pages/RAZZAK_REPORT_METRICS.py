@@ -46,8 +46,8 @@ OWW = WD['HRS ONLINE'] *  WD['UNNAMED: 36']
 
 
 st.write(f"{RRE} %")
-st.write(f"[{URL}] Today's Report Date")
-st.write(f"[{url}] Yesterday's Report Date")
+st.write(f"[{URL} & {url} ] Selected Report Date")
+#st.write(f"[{url}] Yesterday's Report Date")
 st.write(f" Today's SI Well's Count =[{SI_Wells_No}] ")
 
 st.write(f" Today's Online Producing Well's Count =[{On_Line_Wells_No}] ")
