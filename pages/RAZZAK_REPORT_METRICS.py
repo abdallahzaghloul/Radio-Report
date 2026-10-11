@@ -60,7 +60,7 @@ elif OPDiff ==0:
 
 
 
-WSW
+
 WD= WD[(WD['STATUS']!="SI") & WD['WELL NAME'] ]
 WD.index = range(1, len(WD) + 1)
 
@@ -73,6 +73,8 @@ OWW
 st.write(f"Today's Total Water Produced F/ Oil Producing Wells {[Total_WC_Production]} BW ")
 
 
+WSW= WSW[WSW['STATUS']!="SI" ]
+WSW.index = range(1, len(WSW) + 1)
 
 
 
