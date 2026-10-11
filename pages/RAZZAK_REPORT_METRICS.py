@@ -37,20 +37,32 @@ OPY= st.session_state["OPY"]
 WSW=st.session_state["WSW"]
 WD = st.session_state['WD']
 
+OPDiff = OPT-OPY
+
+
+WSW
+WD= WD[WD['STATUS']!="SI"]
+OWW = WD['HRS ONLINE'] *  WD['UNNAMED: 36']
 
 
 st.write(f"{RRE} %")
-URL
-url
-SI_Wells_No
-On_Line_Wells_No
-OPT
-OPY
-OPDiff = OPT-OPY
-OPDiff
-WSW
-#WD= WD[WD['STATUS']!="SI"]
-#OWW = WD['HRS ONLINE'] *  WD['UNNAMED: 36']
+st.write(f"[{URL}] Today's Report Date")
+st.write(f"[{url}] Yesterday's Report Date")
+st.write(f" Today's SI Well's Count =[{SI_Wells_No}] ")
+
+st.write(f" Today's Online Producing Well's Count =[{On_Line_Wells_No}] ")
+st.write(f" Today [{URL}] Oil Production = [{OPT}] BO ")
+
+st.write(f" Yesterday {[url]} Oil Production = [{OPY}] BO ")
+
+if OPDiff <0:
+            st.write(f" Differ's Oil Production = [{OPDiff}] BO ")
+elif OPDiff >0:
+            st.write(f" Gain's Oil Production = [{OPDiff}] BO ")
+elif OPDiff ==0:
+            st.write(f" No Differ in Today Vs. YesterdayProd. ")
+
+ 
 
 
 
