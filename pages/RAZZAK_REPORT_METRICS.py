@@ -75,11 +75,11 @@ st.write(f"Today's Total Water Produced F/ Oil Producing Wells {[Total_WC_Produc
 
 WSW= WSW[WSW['STATUS']!="SI" ]
 WSW.index = range(1, len(WSW) + 1)
-WSW
-WSW['BWPD']
+
+#WSW['BWPD']
 WSW['FLUSH HRS']
-Total_WS_Production = WSW['BWPD']*(1-(WSW['FLUSH HRS']/24))
-st.write(f"Today's Total Water Produced F/ WSW {[Total_WS_Production]} BW ")
+#Total_WS_Production = WSW['BWPD']*(1-(WSW['FLUSH HRS']/24))
+#st.write(f"Today's Total Water Produced F/ WSW {[Total_WS_Production]} BW ")
 
 
 
