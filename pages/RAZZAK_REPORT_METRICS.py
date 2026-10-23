@@ -85,8 +85,8 @@ st.write(WSW['FLUSH HRS'])
 
 Total_WS_Production = WSW['BWPD']*(1-(WSW['FLUSH HRS']/24))
 
+st.write(Total_WS_Production)
 
-st.write(f"Today's Total Water Produced F/ WSW {[Total_WS_Production]} BW ")
 
 
 
