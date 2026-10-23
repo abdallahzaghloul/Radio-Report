@@ -87,7 +87,7 @@ WSW['HRS ONLINE']=WSW['HRS ONLINE'].fillna(0)
 
 Total_WS_Production = WSW['BWPD']*(WSW['HRS ONLINE']/24)
 
-st.write(Total_WS_Production)
+st.write(Total_WS_Production.sum())
 
 
 
