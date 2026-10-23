@@ -85,7 +85,7 @@ WSW['HRS ONLINE'] = WSW['HRS ONLINE'].astype('float')
 WSW['FLUSH HRS']=WSW['FLUSH HRS'].fillna(0)
 WSW['HRS ONLINE']=WSW['HRS ONLINE'].fillna(0)
 
-Total_WS_Production = WSW['BWPD']*(WSW['HRS ONLINE']/24)
+Total_WS_Production = WSW['ESTIMATED BWPD']*(WSW['HRS ONLINE']/24)
 
 st.write(Total_WS_Production.sum())
 
