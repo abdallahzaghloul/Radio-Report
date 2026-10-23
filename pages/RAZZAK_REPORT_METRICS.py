@@ -78,12 +78,14 @@ WSW.index = range(1, len(WSW) + 1)
 
 WSW['FLUSH HRS'] = WSW['FLUSH HRS'].astype('float')
 
+WSW['HRS ONLINE'] = WSW['HRS ONLINE'].astype('float')
+
 
 
 WSW['FLUSH HRS']=WSW['FLUSH HRS'].fillna(0)
-st.write(WSW['FLUSH HRS'])
+WSW['HRS ONLINE']=WSW['HRS ONLINE'].fillna(0)
 
-Total_WS_Production = WSW['BWPD']*(1-(WSW['FLUSH HRS']/24))
+Total_WS_Production = WSW['BWPD']*(WSW['HRS ONLINE']/24)
 
 st.write(Total_WS_Production)
 
