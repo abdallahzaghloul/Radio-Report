@@ -77,7 +77,7 @@ WSW= WSW[WSW['STATUS']!="SI" ]
 WSW.index = range(1, len(WSW) + 1)
 
 #WSW['BWPD']
-WSW['FLUSH HRS'] = np.where(WSW['FLUSH HRS'] =='nan',0)
+WSW['FLUSH HRS'] = np.where(isnull(WSW['FLUSH HRS']) = True',0)
 WSW['FLUSH HRS']
 #Total_WS_Production = WSW['BWPD']*(1-(WSW['FLUSH HRS']/24))
 #st.write(f"Today's Total Water Produced F/ WSW {[Total_WS_Production]} BW ")
