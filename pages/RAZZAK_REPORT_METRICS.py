@@ -76,7 +76,7 @@ st.write(f"Today's Total Water Produced F/ Oil Producing Wells {[Total_WC_Produc
 WSW= WSW[WSW['STATUS']!="SI" ]
 WSW.index = range(1, len(WSW) + 1)
 
-WSW['FLUSH HRS'] = WSW['FLUSH HRS'].astype('float')
+#WSW['FLUSH HRS'] = WSW['FLUSH HRS'].astype('float')
 
 st.write(WSW['FLUSH HRS'].isnull())
 
