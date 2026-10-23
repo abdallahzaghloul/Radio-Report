@@ -81,7 +81,7 @@ WSW['FLUSH HRS'] = WSW['FLUSH HRS'].astype('float')
 st.write(WSW['FLUSH HRS'].isnull())
 
 
-WSW['FLUSH HRS'].apply(lambda x: 0 if isnull(x) = True else x)
+#WSW['FLUSH HRS'].apply(lambda x: 0 if isnull(x) = True else x)
 
 Total_WS_Production = WSW['BWPD']*(1-(WSW['FLUSH HRS']/24))
 
