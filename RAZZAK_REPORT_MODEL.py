@@ -42,7 +42,7 @@ Start_Date =Start_Date.replace('-','_')
 
 End_Date = st.text_input("Enter End Date [31-08-2025]")
 End_Date =End_Date.replace('-','_')
-URL = "RAZZAK_OIL_REPORT_"+End_Date+'.xlsx'
+#URL = "RAZZAK_OIL_REPORT_"+End_Date+'.xlsx'
 
 
 if st.button("Selective RAZZAK Report Dates"):
@@ -460,6 +460,8 @@ st.session_state["OPY"]=int(Oil_Prod.iloc[17,6])
 st.session_state['WD']= Well_Data
 st.session_state["WSW"]=WSW_Data
 st.session_state['WD']= Well_Data
+st.session_state['SD']= Start_Date
+st.session_state['ED']= End_Date
 
 
 
