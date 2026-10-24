@@ -87,8 +87,9 @@ WSW['HRS ONLINE']=WSW['HRS ONLINE'].fillna(0)
 
 Total_WS_Production = WSW['ESTIMATED BWPD']*(WSW['HRS ONLINE']/24)
 
-st.write(Total_WS_Production.sum())
-
+st.write(f"Today's Total Water Produced F/ WSW {Total_WS_Production.sum()} BW ")
+st.write(f"Today's Total Water Produced F/ WSW & WC of Oil Wells {Total_WS_Production.sum()+[Total_WC_Production]} BW ")
+ 
 
 
 
